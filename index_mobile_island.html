@@ -1,0 +1,3644 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0B3B3C" />
+  <meta name="color-scheme" content="light" />
+  <meta name="robots" content="index,follow" />
+
+  <title>Ordination Dr. Ruth Lechner – Innere Medizin &amp; Geriatrie in Feldkirchen</title>
+  <meta name="description" content="Internistische Facharztordination mit Zusatzfach Geriatrie in Feldkirchen (Kärnten). Alle Kassen und Privat. Termine nur nach telefonischer Vereinbarung." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="de_AT" />
+  <meta property="og:title" content="Ordination Dr. Ruth Lechner – Innere Medizin &amp; Geriatrie" />
+  <meta property="og:description" content="Internistische Facharztordination mit Zusatzfach Geriatrie. Alle Kassen und Privat. Termine nur nach telefonischer Vereinbarung." />
+  <meta property="og:image" content="https://www.inneremedizin-lechner.at/uploads/RGN9jdbZ/768x0_640x0/AdobeStock_562280510-T.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,650&display=swap" />
+
+  <link rel="preload" as="image" href="https://www.inneremedizin-lechner.at/uploads/51lCwt24/320x0_480x0/Portrait_fr_Ordination2.webp" fetchpriority="high" />
+  <link rel="preload" as="image" href="https://www.inneremedizin-lechner.at/uploads/RGN9jdbZ/768x0_640x0/AdobeStock_562280510-T.jpg" fetchpriority="high" />
+
+  <link rel="canonical" href="/" id="canonical" />
+
+  <!-- JSON-LD is updated at runtime with URL best-effort for SPA. -->
+  <script type="application/ld+json" id="schema-jsonld">
+  {
+    "@context": "https://schema.org",
+    "@type": ["MedicalClinic","Physician","LocalBusiness"],
+    "name": "Ordination Dr. Ruth Lechner",
+    "image": [
+      "https://www.inneremedizin-lechner.at/uploads/51lCwt24/320x0_480x0/Portrait_fr_Ordination2.webp",
+      "https://www.inneremedizin-lechner.at/uploads/RGN9jdbZ/768x0_640x0/AdobeStock_562280510-T.jpg"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Dr. Arthur Lemisch Straße 9/1",
+      "postalCode": "9560",
+      "addressLocality": "Feldkirchen",
+      "addressCountry": "AT"
+    },
+    "areaServed": "Feldkirchen, Kärnten",
+    "medicalSpecialty": "InternalMedicine",
+    "telephone": "+43 664 306 10 10",
+    "faxNumber": "+43 4276 7225 20",
+    "openingHoursSpecification": [
+      { "@type":"OpeningHoursSpecification", "dayOfWeek":"Monday",    "opens":"07:30", "closes":"13:00" },
+      { "@type":"OpeningHoursSpecification", "dayOfWeek":"Tuesday",   "opens":"07:30", "closes":"13:00" },
+      { "@type":"OpeningHoursSpecification", "dayOfWeek":"Wednesday", "opens":"14:00", "closes":"18:00" },
+      { "@type":"OpeningHoursSpecification", "dayOfWeek":"Thursday",  "opens":"07:30", "closes":"13:00" },
+      { "@type":"OpeningHoursSpecification", "dayOfWeek":"Friday",    "opens":"07:30", "closes":"09:00" }
+    ],
+    "contactPoint": [
+      { "@type":"ContactPoint", "telephone":"+43 664 306 10 10", "contactType":"appointments", "availableLanguage":["de"] },
+      { "@type":"ContactPoint", "telephone":"+43 4276 7225", "contactType":"office", "availableLanguage":["de"] }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ==========================================================================
+       Single-file SPA – Premium Praxis-Website (Rev. 2)
+       Fixes:
+       - Buttons/Router now work reliably, incl. local file preview (hash fallback).
+       - Sheets (Leistungen/Mehr) no longer auto-close (timer bug fixed).
+       Visual upgrades:
+       - More advanced “Liquid Glass” material: rim lighting, specular + caustics, noise, distortion.
+       - Fluid indicator with velocity-based stretch/skew + compact-on-scroll tab bar.
+       ========================================================================== */
+
+    :root{
+      --bg: #F6F5F1;
+      --bg2:#FBFBF8;
+      --ink:#0D1B1B;
+      --muted:#4B5B5A;
+      --soft:#6A7A78;
+      --line: rgba(13,27,27,.12);
+
+      --brand:#0B3B3C;
+      --brand2:#0F4A4C;
+      --accent:#2B6E6A;
+      --warm:#D9C7A7;
+      --sun:#F0E6D4;
+
+      --card:#FFFFFF;
+      --shadow: 0 18px 40px rgba(13,27,27,.10);
+      --shadow2: 0 10px 22px rgba(13,27,27,.10);
+      --shadow3: 0 2px 10px rgba(13,27,27,.10);
+
+      --radius: 18px;
+      --radius2: 12px;
+      --radius3: 10px;
+
+      --max: 1180px;
+
+      --h1: clamp(2rem, 3.5vw + 1rem, 3.1rem);
+      --h2: clamp(1.5rem, 1.5vw + 1.2rem, 2.1rem);
+      --h3: clamp(1.15rem, 1.0vw + 1.0rem, 1.45rem);
+      --p:  clamp(1.0rem, .35vw + .95rem, 1.1rem);
+      --s:  0.95rem;
+
+      --ease: cubic-bezier(.2,.9,.1,1);
+      --fast: 180ms;
+      --med:  320ms;
+
+      --infobarH: 40px;
+      --headerH: 72px;
+
+      --tabH: 72px;
+      --tabPad: 10px;
+      --tabSafe: calc(var(--tabH) + env(safe-area-inset-bottom) + 22px);
+      --tabMax: 920px;
+
+      /* Pointer-tracked highlights (0..1 normalized) */
+      --px: .6;
+      --py: .2;
+    }
+
+    *{ box-sizing: border-box; }
+    html, body{ height: 100%; }
+    html{ scroll-behavior: smooth; }
+    body{
+      margin:0;
+      background:
+        radial-gradient(1200px 900px at 10% -10%, rgba(11,59,60,.10), transparent 45%),
+        radial-gradient(1000px 800px at 110% 0%, rgba(217,199,167,.18), transparent 48%),
+        linear-gradient(180deg, var(--bg2), var(--bg));
+      color: var(--ink);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height: 1.55;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: clip;
+    }
+
+    img{ max-width:100%; height:auto; display:block; }
+    a{ color: inherit; text-decoration: none; }
+    button{ font: inherit; color: inherit; }
+    p{ font-size: var(--p); color: var(--muted); margin: 0; }
+    ::selection{ background: rgba(43,110,106,.20); }
+
+    .sr-only{
+      position:absolute !important;
+      width:1px; height:1px;
+      padding:0; margin:-1px;
+      overflow:hidden; clip:rect(0,0,0,0);
+      white-space:nowrap; border:0;
+    }
+    .skip-link{
+      position:absolute;
+      left:12px; top:10px;
+      transform: translateY(-140%);
+      background:#fff;
+      color: var(--ink);
+      border:1px solid var(--line);
+      border-radius: 12px;
+      padding:10px 12px;
+      z-index:10000;
+      box-shadow: var(--shadow3);
+      transition: transform var(--fast) var(--ease);
+    }
+    .skip-link:focus{ transform: translateY(0); outline: 3px solid rgba(43,110,106,.35); outline-offset:2px; }
+
+    :focus-visible{
+      outline: 3px solid rgba(43,110,106,.35);
+      outline-offset: 3px;
+      border-radius: 12px;
+    }
+
+    .container{
+      width: min(var(--max), calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    /* ==========================================================================
+       Liquid Glass Material (web approximation)
+       - Backdrop blur/tint + rim lighting + specular highlights + caustics + noise
+       - Designed as progressive enhancement; still readable without blend modes.
+       ========================================================================== */
+
+    .liquid{
+      position: relative;
+      overflow: clip;
+      border-radius: 22px;
+      border: 1px solid transparent;
+      background:
+        /* base tint (padding) */
+        linear-gradient(180deg, rgba(255,255,255,.52), rgba(255,255,255,.18)) padding-box,
+        /* chromed rim (border) */
+        linear-gradient(135deg,
+          rgba(255,255,255,.78),
+          rgba(255,255,255,.10) 35%,
+          rgba(255,255,255,.55) 70%,
+          rgba(255,255,255,.18)) border-box;
+      box-shadow:
+        0 22px 60px rgba(13,27,27,.22),
+        0 1px 0 rgba(255,255,255,.45) inset,
+        0 -1px 0 rgba(0,0,0,.10) inset,
+        0 0 0 1px rgba(255,255,255,.08) inset;
+      backdrop-filter: blur(18px) saturate(1.6) contrast(1.08) brightness(1.06);
+      -webkit-backdrop-filter: blur(18px) saturate(1.6) contrast(1.08) brightness(1.06);
+      transform: translateZ(0);
+      isolation: isolate; /* keep blends inside */
+    }
+
+    /* Rim lighting layer (mask-based border glow where supported) */
+    .liquid > .rim{
+      position:absolute; inset:0;
+      border-radius: inherit;
+      pointer-events:none;
+      opacity: .9;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.85), rgba(255,255,255,.08), rgba(255,255,255,.55));
+      padding: 1px;
+      /* Show only border region */
+      -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+    @supports not (-webkit-mask-composite: xor){
+      .liquid > .rim{ display:none; }
+    }
+
+    /* Specular + caustics layer (context-reactive) */
+    .liquid > .spec{
+      position:absolute; inset:-35%;
+      border-radius: inherit;
+      pointer-events:none;
+      mix-blend-mode: screen;
+      opacity: .70;
+      filter: url(#lg-distort) saturate(1.15) contrast(1.12);
+      transform: translate3d(0,0,0);
+      background:
+        radial-gradient(520px 240px at calc(var(--px) * 100%) calc(var(--py) * 100%),
+          rgba(255,255,255,.95),
+          rgba(255,255,255,.35) 30%,
+          rgba(255,255,255,.14) 52%,
+          transparent 68%),
+        radial-gradient(420px 260px at calc((1 - var(--px)) * 100%) calc((.15 + var(--py) * .35) * 100%),
+          rgba(240,230,212,.45),
+          transparent 62%),
+        conic-gradient(from 210deg at 50% 50%,
+          rgba(255,255,255,.10),
+          rgba(43,110,106,.16),
+          rgba(255,255,255,.08),
+          rgba(217,199,167,.18),
+          rgba(255,255,255,.10));
+    }
+    @media (prefers-reduced-motion: no-preference){
+      .liquid > .spec{ animation: specDrift 10s var(--ease) infinite alternate; }
+      @keyframes specDrift{
+        from{ transform: translate3d(-1.2%, -1.0%, 0) scale(1.02); }
+        to  { transform: translate3d( 1.6%,  1.4%, 0) scale(1.05); }
+      }
+    }
+
+    /* Refraction illusion layer */
+    .liquid > .distort{
+      position:absolute; inset:-14%;
+      border-radius: inherit;
+      pointer-events:none;
+      opacity: .42;
+      mix-blend-mode: overlay;
+      filter: url(#lg-distort) saturate(1.1) contrast(1.05);
+      transform: translate3d(0,0,0);
+      background:
+        radial-gradient(420px 260px at 18% 40%, rgba(240,230,212,.70), transparent 62%),
+        radial-gradient(520px 320px at 70% 30%, rgba(43,110,106,.22), transparent 66%),
+        linear-gradient(120deg, rgba(255,255,255,.18), transparent 40%, rgba(255,255,255,.10));
+    }
+
+    /* Micro-noise */
+    .liquid::after{
+      content:"";
+      position:absolute; inset:0;
+      pointer-events:none;
+      opacity: .12;
+      mix-blend-mode: overlay;
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='96' height='96' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E");
+      background-size: 140px 140px;
+    }
+
+    /* ==========================================================================
+       Info bar + header
+       ========================================================================== */
+    .infobar{
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      height: var(--infobarH);
+      display:flex;
+      align-items:center;
+      background: rgba(255,255,255,.72);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(13,27,27,.08);
+    }
+    .infobar .wrap{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: .95rem;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(11,59,60,.08);
+      border: 1px solid rgba(11,59,60,.12);
+      color: var(--brand);
+      font-weight: 700;
+      letter-spacing: .1px;
+      white-space: nowrap;
+    }
+    .infobar a.tel{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      color: var(--ink);
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(13,27,27,.10);
+    }
+    .infobar a.tel:hover{ border-color: rgba(43,110,106,.30); }
+
+    header.site-header{
+      position: sticky;
+      top: var(--infobarH);
+      z-index: 70;
+      height: var(--headerH);
+      display:flex;
+      align-items:center;
+      background: rgba(246,245,241,.80);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(13,27,27,.10);
+    }
+    header.site-header[data-scrolled="true"]{
+      background: rgba(246,245,241,.92);
+      border-bottom-color: rgba(13,27,27,.14);
+    }
+    .header-row{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      min-width: 220px;
+    }
+    .brand-mark{
+      width: 40px; height: 40px;
+      border-radius: 14px;
+      background:
+        radial-gradient(24px 24px at 35% 35%, rgba(240,230,212,.95), rgba(217,199,167,.65) 56%, rgba(11,59,60,.18) 100%),
+        linear-gradient(180deg, rgba(11,59,60,.92), rgba(11,59,60,.82));
+      box-shadow: 0 10px 20px rgba(11,59,60,.18);
+      border: 1px solid rgba(255,255,255,.35);
+      position: relative;
+      overflow: hidden;
+    }
+    .brand-mark:after{
+      content:"";
+      position:absolute; inset:-20%;
+      background: linear-gradient(135deg, rgba(255,255,255,.55), transparent 55%);
+      transform: rotate(12deg);
+      opacity: .18;
+    }
+    .brand-title{ display:flex; flex-direction: column; line-height: 1.1; }
+    .brand-title strong{
+      font-family: Fraunces, serif;
+      font-weight: 650;
+      letter-spacing: .1px;
+      font-size: 1.08rem;
+      color: var(--ink);
+    }
+    .brand-title span{
+      font-size: .92rem;
+      color: var(--soft);
+      margin-top: 2px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 10px;
+      border-radius: 999px;
+      padding: 10px 14px;
+      border: 1px solid rgba(13,27,27,.12);
+      background: rgba(255,255,255,.84);
+      color: var(--ink);
+      font-weight: 800;
+      letter-spacing: .1px;
+      cursor: pointer;
+      transition: transform var(--fast) var(--ease), box-shadow var(--fast) var(--ease), background var(--fast) var(--ease), border-color var(--fast) var(--ease);
+      box-shadow: 0 6px 18px rgba(13,27,27,.08);
+      user-select:none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .btn:hover{ transform: translateY(-1px); border-color: rgba(43,110,106,.25); box-shadow: 0 10px 24px rgba(13,27,27,.10); }
+    .btn:active{ transform: translateY(0); box-shadow: 0 6px 14px rgba(13,27,27,.08); }
+    .btn.primary{
+      background: linear-gradient(180deg, rgba(11,59,60,.98), rgba(11,59,60,.88));
+      color: #fff;
+      border-color: rgba(255,255,255,.10);
+      box-shadow: 0 14px 34px rgba(11,59,60,.18);
+    }
+    .btn.primary:hover{ box-shadow: 0 18px 42px rgba(11,59,60,.24); border-color: rgba(255,255,255,.18); }
+
+    .icon{ width: 18px; height: 18px; display:inline-block; flex: 0 0 auto; }
+
+    /* ==========================================================================
+       Main / view / typography
+       ========================================================================== */
+    main{
+      min-height: 60vh;
+      padding-bottom: var(--tabSafe); /* keep content clear of floating tab bar */
+    }
+    .view{ padding: 26px 0 72px; }
+
+    .section{ padding: 26px 0; }
+    .cv-auto{ content-visibility: auto; contain-intrinsic-size: 1px 860px; }
+
+    .pagehead{ padding: 10px 0 22px; }
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(11,59,60,.14);
+      background: rgba(11,59,60,.08);
+      color: var(--brand);
+      font-weight: 900;
+      font-size: .95rem;
+      letter-spacing: .1px;
+    }
+    h1{
+      font-family: Fraunces, serif;
+      font-weight: 650;
+      font-size: var(--h1);
+      letter-spacing: -0.3px;
+      line-height: 1.1;
+      margin: 14px 0 10px;
+      color: var(--ink);
+    }
+    h2{
+      font-family: Fraunces, serif;
+      font-weight: 650;
+      font-size: var(--h2);
+      letter-spacing: -0.2px;
+      margin: 0 0 10px;
+      color: var(--ink);
+      line-height: 1.15;
+    }
+    h3{
+      font-weight: 900;
+      font-size: var(--h3);
+      margin: 0 0 8px;
+      color: var(--ink);
+      letter-spacing: -0.1px;
+    }
+    .lead{
+      font-size: clamp(1.05rem, .5vw + 1rem, 1.2rem);
+      color: var(--muted);
+      margin-top: 6px;
+      max-width: 64ch;
+    }
+
+    .crumbs{
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items:center;
+      font-size: .95rem;
+      color: var(--soft);
+      margin-top: 6px;
+    }
+    .crumbs a{
+      color: var(--soft);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    .crumbs a:hover{ color: var(--brand); }
+
+    .hero{ padding: 14px 0 10px; }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+    .hero-actions{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .trustrow{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+    .trust{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(13,27,27,.10);
+      background: rgba(255,255,255,.78);
+      box-shadow: 0 10px 22px rgba(13,27,27,.06);
+      color: var(--ink);
+      font-weight: 800;
+      font-size: .98rem;
+    }
+    .trust small{ color: var(--muted); font-weight: 650; }
+
+    .hero-media{
+      position: relative;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(13,27,27,.12);
+      background:
+        radial-gradient(800px 500px at 20% 0%, rgba(11,59,60,.16), transparent 55%),
+        radial-gradient(700px 600px at 90% 10%, rgba(217,199,167,.25), transparent 58%),
+        linear-gradient(180deg, rgba(255,255,255,.85), rgba(246,245,241,.92));
+      box-shadow: var(--shadow);
+      padding: 14px;
+    }
+    .media-stack{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .media-card{
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(13,27,27,.10);
+      background: rgba(255,255,255,.65);
+      box-shadow: 0 10px 24px rgba(13,27,27,.08);
+      aspect-ratio: 16 / 10;
+    }
+    .media-card.portrait{ aspect-ratio: 4 / 5; max-width: 420px; }
+    .media-card .imgwrap{ position:absolute; inset: 0; overflow:hidden; background: linear-gradient(135deg, rgba(11,59,60,.10), rgba(217,199,167,.22)); }
+    .media-card img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: translateZ(0);
+      filter: saturate(1.02) contrast(1.02);
+    }
+    .media-card img[data-loaded="false"]{ filter: blur(18px) saturate(1.05); transform: scale(1.03); }
+
+    .media-meta{
+      position:absolute;
+      left: 12px; right: 12px;
+      bottom: 12px;
+      display:flex;
+      align-items:flex-end;
+      justify-content: space-between;
+      gap: 10px;
+      pointer-events: none;
+    }
+    .glass{
+      pointer-events: none;
+      padding: 10px 12px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(255,255,255,.55);
+      box-shadow: 0 10px 22px rgba(13,27,27,.10);
+      backdrop-filter: blur(10px);
+      max-width: 80%;
+    }
+    .glass strong{ display:block; font-weight: 900; }
+    .glass span{ color: var(--muted); font-weight: 650; font-size: .95rem; display:block; margin-top: 2px; }
+
+    /* Cards / grids */
+    .grid{ display:grid; grid-template-columns: 1fr; gap: 14px; }
+    .card{
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.85);
+      border: 1px solid rgba(13,27,27,.10);
+      box-shadow: 0 10px 28px rgba(13,27,27,.06);
+      padding: 16px;
+      transition: transform var(--fast) var(--ease), box-shadow var(--fast) var(--ease), border-color var(--fast) var(--ease);
+    }
+    .card:hover{ transform: translateY(-1px); box-shadow: 0 18px 40px rgba(13,27,27,.08); border-color: rgba(43,110,106,.20); }
+    .card .top{ display:flex; align-items:flex-start; justify-content: space-between; gap: 10px; }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(217,199,167,.28);
+      border: 1px solid rgba(217,199,167,.45);
+      color: rgba(13,27,27,.92);
+      font-weight: 900;
+      font-size: .92rem;
+      white-space: nowrap;
+    }
+    .arrow{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width: 40px; height: 40px;
+      border-radius: 14px;
+      border: 1px solid rgba(13,27,27,.10);
+      background: rgba(246,245,241,.85);
+      box-shadow: 0 8px 18px rgba(13,27,27,.06);
+      transition: transform var(--fast) var(--ease);
+    }
+    .card:hover .arrow{ transform: translateX(2px); }
+
+    .callout{
+      border-radius: var(--radius);
+      border: 1px solid rgba(11,59,60,.14);
+      background: linear-gradient(180deg, rgba(11,59,60,.08), rgba(255,255,255,.75));
+      box-shadow: 0 14px 34px rgba(11,59,60,.10);
+      padding: 16px;
+    }
+    .callout .row{
+      display:flex;
+      align-items:flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .callout strong{ display:block; color: var(--ink); font-weight: 900; font-size: 1.05rem; }
+    .callout p{ max-width: 72ch; }
+
+    .ticks{
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0;
+      display:grid;
+      gap: 8px;
+    }
+    .ticks li{ display:flex; align-items:flex-start; gap: 10px; color: var(--muted); font-size: var(--p); }
+    .ticks svg{ margin-top: 2px; color: var(--accent); }
+
+    details.accordion{
+      border-radius: 16px;
+      border: 1px solid rgba(13,27,27,.10);
+      background: rgba(255,255,255,.86);
+      box-shadow: 0 10px 22px rgba(13,27,27,.05);
+      overflow: clip;
+    }
+    details.accordion + details.accordion{ margin-top: 10px; }
+    details.accordion summary{
+      list-style: none;
+      cursor: pointer;
+      padding: 14px 14px;
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 12px;
+      font-weight: 900;
+      color: var(--ink);
+      border-bottom: 1px solid rgba(13,27,27,.08);
+      background: linear-gradient(180deg, rgba(246,245,241,.80), rgba(255,255,255,.92));
+    }
+    details.accordion summary::-webkit-details-marker{ display:none; }
+    details.accordion summary .hint{ font-weight: 750; color: var(--muted); font-size: .95rem; }
+    details.accordion .content{ padding: 12px 14px 14px; color: var(--muted); font-size: var(--p); }
+    .chev{
+      width: 42px; height: 42px;
+      border-radius: 14px;
+      border: 1px solid rgba(13,27,27,.10);
+      background: rgba(246,245,241,.80);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      transition: transform var(--med) var(--ease);
+      flex: 0 0 auto;
+    }
+    details[open] summary .chev{ transform: rotate(180deg); }
+
+    .steps{ margin-top: 8px; display:grid; gap: 10px; }
+    .step{
+      border-radius: var(--radius);
+      border: 1px solid rgba(13,27,27,.10);
+      background: rgba(255,255,255,.86);
+      padding: 14px;
+      display:flex;
+      gap: 12px;
+      align-items:flex-start;
+      box-shadow: 0 10px 22px rgba(13,27,27,.05);
+    }
+    .step .num{
+      width: 42px; height: 42px;
+      border-radius: 16px;
+      background: rgba(11,59,60,.10);
+      border: 1px solid rgba(11,59,60,.14);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight: 900;
+      color: var(--brand);
+      flex: 0 0 auto;
+    }
+    .step p{ margin-top: 2px; }
+
+    .table{
+      width:100%;
+      border-collapse: collapse;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid rgba(13,27,27,.10);
+      background: rgba(255,255,255,.86);
+      box-shadow: 0 10px 22px rgba(13,27,27,.05);
+    }
+    .table th, .table td{
+      text-align:left;
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(13,27,27,.08);
+      font-size: 1rem;
+    }
+    .table th{ background: rgba(246,245,241,.82); font-weight: 900; color: var(--ink); }
+    .table tr:last-child td{ border-bottom: 0; }
+
+    .split{ display:grid; gap: 14px; grid-template-columns: 1fr; align-items:start; }
+    .stack{ display:flex; flex-direction: column; gap: 12px; }
+    .hr{ height:1px; background: rgba(13,27,27,.10); margin: 14px 0; border:0; }
+    .small{ font-size: var(--s); color: var(--muted); }
+
+    /* Reveal animations (IntersectionObserver) */
+    [data-reveal]{ opacity: 0; transform: translateY(12px); transition: opacity 600ms var(--ease), transform 600ms var(--ease); }
+    [data-reveal].is-visible{ opacity: 1; transform: translateY(0); }
+
+
+    /* ==========================================================================
+       Smart Island (Mobile) – Dynamic-Island-artiges Schnellzugriff-Element
+       Ziel: Weniger Kopfbereich, mehr Nutzwert (Öffnungsstatus, Schnellaktionen)
+       ========================================================================== */
+    .island-wrap, .island-backdrop{ display:none; }
+
+    /* Dark-tinted liquid variant for iOS-like island contrast (works in light + dark UI) */
+    .liquid.liquid-dark{
+      background:
+        linear-gradient(180deg, rgba(12,16,16,.58), rgba(12,16,16,.38)) padding-box,
+        linear-gradient(135deg,
+          rgba(255,255,255,.36),
+          rgba(255,255,255,.08) 35%,
+          rgba(255,255,255,.22) 70%,
+          rgba(255,255,255,.10)) border-box;
+      color: rgba(255,255,255,.92);
+      box-shadow:
+        0 26px 70px rgba(0,0,0,.38),
+        0 1px 0 rgba(255,255,255,.24) inset,
+        0 -1px 0 rgba(0,0,0,.30) inset,
+        0 0 0 1px rgba(255,255,255,.06) inset;
+      backdrop-filter: blur(18px) saturate(1.7) contrast(1.05) brightness(1.02);
+      -webkit-backdrop-filter: blur(18px) saturate(1.7) contrast(1.05) brightness(1.02);
+    }
+    .liquid.liquid-dark::after{ opacity: .10; }
+
+    .island-wrap{
+      position: fixed;
+      top: calc(env(safe-area-inset-top) + 10px);
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 140;
+      width: min(720px, calc(100% - 1.2rem));
+      pointer-events: none;
+    }
+    .smart-island{
+      pointer-events: auto;
+      border-radius: 26px;
+      width: min(440px, calc(100% - 1.2rem));
+      margin: 0 auto;
+      transform: translateZ(0);
+      will-change: transform, width;
+      transition: opacity var(--med) var(--ease);
+    }
+    .smart-island[data-compact="true"]{
+      opacity: .98;
+    }
+
+    .island-bar{
+      display:flex;
+      align-items:center;
+      gap: 8px;
+      padding: 8px;
+      position: relative;
+      z-index: 2;
+    }
+    .island-main{
+      flex: 1;
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.06);
+      color: inherit;
+      cursor: pointer;
+      text-align: left;
+      min-width: 0;
+      -webkit-tap-highlight-color: transparent;
+      transition: background var(--fast) var(--ease), border-color var(--fast) var(--ease), transform var(--fast) var(--ease);
+    }
+    .island-main:hover{ background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.14); }
+    .island-main:active{ transform: translateY(1px); }
+
+    .island-dot{
+      width: 10px; height: 10px;
+      border-radius: 999px;
+      background: #7FE1B2;
+      box-shadow: 0 0 0 6px rgba(127,225,178,.14);
+      flex: 0 0 auto;
+    }
+    .island-dot[data-open="false"]{
+      background: #FFB26B;
+      box-shadow: 0 0 0 6px rgba(255,178,107,.14);
+    }
+    .island-text{
+      display:flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+    .island-title{
+      font-weight: 900;
+      font-size: .98rem;
+      letter-spacing: -.1px;
+      color: rgba(255,255,255,.94);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.1;
+    }
+    .island-sub{
+      font-weight: 650;
+      font-size: .88rem;
+      color: rgba(255,255,255,.72);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.1;
+    }
+
+    .smart-island[data-compact="true"] .island-sub{ display:none; }
+    .smart-island[data-compact="true"]{ width: min(300px, calc(100% - 1.2rem)); }
+
+    .island-icon{
+      width: 44px; height: 44px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.07);
+      color: rgba(255,255,255,.92);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform var(--fast) var(--ease), background var(--fast) var(--ease), border-color var(--fast) var(--ease);
+      flex: 0 0 auto;
+    }
+    .island-icon:hover{ background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.16); transform: translateY(-1px); }
+    .island-icon:active{ transform: translateY(0); }
+    .island-icon.close{ display:none; }
+    .smart-island[data-state="expanded"] .island-icon.close{ display:flex; }
+
+    .island-panel{
+      padding: 0 10px 12px;
+      position: relative;
+      z-index: 2;
+    }
+    .island-panel-inner{
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.12);
+      padding: 12px;
+      box-shadow: 0 18px 40px rgba(0,0,0,.28) inset;
+    }
+    .island-head{
+      display:flex;
+      align-items:flex-start;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .island-head strong{
+      display:block;
+      font-family: Fraunces, serif;
+      font-weight: 650;
+      letter-spacing: -.1px;
+      color: rgba(255,255,255,.98);
+      line-height: 1.05;
+    }
+    .island-head span{
+      display:block;
+      margin-top: 2px;
+      color: rgba(255,255,255,.70);
+      font-weight: 650;
+      font-size: .9rem;
+      line-height: 1.2;
+    }
+    .island-status{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.07);
+      color: rgba(255,255,255,.88);
+      font-weight: 900;
+      font-size: .9rem;
+      white-space: nowrap;
+    }
+
+    .island-chips{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .island-chip{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      color: rgba(255,255,255,.90);
+      font-weight: 900;
+      font-size: .88rem;
+      white-space: nowrap;
+    }
+
+    .island-actions{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .island-action{
+      display:flex;
+      align-items:flex-start;
+      gap: 10px;
+      padding: 12px 12px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      color: rgba(255,255,255,.94);
+      font-weight: 900;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform var(--fast) var(--ease), background var(--fast) var(--ease), border-color var(--fast) var(--ease);
+      -webkit-tap-highlight-color: transparent;
+      min-height: 54px;
+    }
+    .island-action:hover{ transform: translateY(-1px); background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.16); }
+    .island-action:active{ transform: translateY(0); }
+    .island-action.primary{
+      background: linear-gradient(180deg, rgba(43,110,106,.62), rgba(11,59,60,.58));
+      border-color: rgba(255,255,255,.14);
+    }
+    .island-action .txt{ display:flex; flex-direction: column; gap: 2px; min-width: 0; }
+    .island-action small{ color: rgba(255,255,255,.74); font-weight: 650; display:block; font-size: .88rem; white-space: nowrap; overflow:hidden; text-overflow: ellipsis; }
+    .island-action svg{ flex: 0 0 auto; margin-top: 2px; }
+
+    button.island-action{ font: inherit; text-align:left; }
+    button.island-icon, button.island-main, button.mini-btn{ font: inherit; }
+    .island-mini{
+      margin-top: 12px;
+      display:flex;
+      flex-direction: column;
+      gap: 8px;
+      color: rgba(255,255,255,.78);
+      font-weight: 650;
+      font-size: .95rem;
+    }
+    .island-mini .row{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 10px;
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 16px;
+      padding: 10px 10px;
+      background: rgba(255,255,255,.05);
+    }
+    .island-mini .row span{ min-width: 0; overflow:hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .island-mini .mini-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 6px;
+      flex: 0 0 auto;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.07);
+      color: rgba(255,255,255,.92);
+      padding: 8px 10px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: background var(--fast) var(--ease), border-color var(--fast) var(--ease), transform var(--fast) var(--ease);
+      -webkit-tap-highlight-color: transparent;
+    }
+    .island-mini .mini-btn:hover{ background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.16); }
+    .island-mini .mini-btn:active{ transform: translateY(1px); }
+
+    .island-toast{
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.10);
+      color: rgba(255,255,255,.94);
+      font-weight: 900;
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .island-backdrop{
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.34);
+      z-index: 135;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--med) var(--ease);
+    }
+    .island-backdrop[data-open="true"]{
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Mobile layout refinements: replace sticky header with island, reduce wasted space */
+    @media (max-width: 859px){
+      .island-wrap, .island-backdrop{ display:block; }
+      .infobar, header.site-header{ display:none; }
+      .view{ padding-top: calc(env(safe-area-inset-top) + 76px); }
+
+      /* Hero media becomes a compact composition (less vertical scroll) */
+      .media-stack{
+        display:grid;
+        grid-template-columns: 1fr;
+        gap: 0;
+        position: relative;
+        min-height: 260px;
+      }
+      .media-stack .media-card{ grid-column: 1; grid-row: 1; }
+      .media-stack .media-card:not(.portrait){
+        z-index: 1;
+        aspect-ratio: 16 / 11;
+      }
+      .media-stack .media-card.portrait{
+        z-index: 2;
+        width: min(46%, 220px);
+        justify-self: start;
+        align-self: end;
+        margin: 0 0 12px 12px;
+        box-shadow: 0 20px 44px rgba(0,0,0,.18);
+      }
+      .media-stack .media-card.portrait .media-meta{ display:none; }
+    }
+
+    /* ==========================================================================
+       Floating Tab Bar (Liquid Glass)
+       ========================================================================== */
+    .tabbar-wrap{
+      position: fixed;
+      left: 0; right: 0;
+      bottom: calc(env(safe-area-inset-bottom) + 12px);
+      z-index: 120;
+      pointer-events: none; /* only bar itself is interactive */
+      transition: transform var(--med) var(--ease), opacity var(--med) var(--ease);
+    }
+    .tabbar-wrap[data-compact="true"]{
+      transform: translateY(8px) scale(.94);
+    }
+    nav.tabbar{
+      pointer-events: auto;
+      width: min(var(--tabMax), calc(100% - 1.2rem));
+      margin: 0 auto;
+      height: var(--tabH);
+      border-radius: 26px;
+      display:flex;
+      align-items:center;
+      gap: 6px;
+      padding: var(--tabPad);
+    }
+    nav.tabbar{ position: relative; }
+
+    /* layering */
+    nav.tabbar > .rim{ z-index: 1; }
+    nav.tabbar > .distort{ z-index: 0; }
+    nav.tabbar > .spec{ z-index: 0; }
+    .tab-indicator{ z-index: 2; }
+    .tab{ z-index: 3; }
+
+    .tab{
+      position: relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap: 10px;
+      height: calc(var(--tabH) - (var(--tabPad) * 2));
+      padding: 0 14px;
+      border-radius: 20px;
+      border: 1px solid transparent;
+      background: transparent;
+      color: rgba(13,27,27,.86);
+      font-weight: 900;
+      letter-spacing: .1px;
+      cursor: pointer;
+      user-select:none;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform var(--fast) var(--ease), background var(--fast) var(--ease), border-color var(--fast) var(--ease), color var(--fast) var(--ease);
+      min-width: 0;
+      flex: 1 1 0;
+      overflow:hidden;
+    }
+    .tab .tlabel{ display:inline; transition: opacity var(--med) var(--ease), transform var(--med) var(--ease); }
+    .tab .ticon{ width: 18px; height: 18px; }
+    .tab:hover{ background: rgba(255,255,255,.22); border-color: rgba(255,255,255,.22); transform: translateY(-1px); }
+    .tab:active{ transform: translateY(0); }
+    .tab[data-active="true"]{ color: rgba(13,27,27,.94); }
+
+    /* compact: hide labels visually (still accessible) */
+    .tabbar-wrap[data-compact="true"] .tab .tlabel{
+      opacity: 0;
+      transform: translateY(4px);
+      pointer-events:none;
+    }
+
+    /* Desktop-only items */
+    .tab.desktop{ display:none; }
+
+    /* "More" button is icon-only on mobile */
+    .tab.more{ flex: 0 0 auto; width: calc(var(--tabH) - (var(--tabPad) * 2)); padding:0; }
+    .tab.more .tlabel{ display:none; }
+
+    /* Active indicator (liquid pill) */
+    .tab-indicator{
+      position:absolute;
+      top: var(--tabPad);
+      left: var(--tabPad);
+      height: calc(var(--tabH) - (var(--tabPad) * 2));
+      width: 120px;
+      border-radius: 20px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.60), rgba(255,255,255,.20));
+      border: 1px solid rgba(255,255,255,.28);
+      box-shadow:
+        0 20px 44px rgba(13,27,27,.24),
+        0 1px 0 rgba(255,255,255,.35) inset,
+        0 -1px 0 rgba(0,0,0,.10) inset;
+      backdrop-filter: blur(18px) saturate(1.65) contrast(1.05);
+      -webkit-backdrop-filter: blur(18px) saturate(1.65) contrast(1.05);
+      pointer-events:none;
+      transform: translate3d(0,0,0);
+      will-change: transform, width;
+      overflow: clip;
+      filter: url(#lg-goo-soft);
+    }
+
+    /* velocity (0..1) from JS */
+    .tab-indicator{ --iv: 0; --idir: 0; }
+
+    .tab-indicator::before{
+      content:"";
+      position:absolute; inset:-8%;
+      background:
+        radial-gradient(280px 140px at calc(var(--px) * 100%) calc(var(--py) * 100%),
+          rgba(255,255,255,.98), rgba(255,255,255,.42) 38%, rgba(255,255,255,.12) 62%, transparent 72%),
+        radial-gradient(240px 120px at 25% 60%,
+          rgba(240,230,212,.48), transparent 66%),
+        conic-gradient(from 200deg at 50% 50%,
+          rgba(255,255,255,.10),
+          rgba(43,110,106,.12),
+          rgba(255,255,255,.08),
+          rgba(217,199,167,.16),
+          rgba(255,255,255,.10));
+      mix-blend-mode: screen;
+      opacity: calc(.58 + var(--iv) * .22);
+      pointer-events:none;
+      filter: url(#lg-distort);
+    }
+    .tab-indicator::after{
+      content:"";
+      position:absolute; inset:-12%;
+      background:
+        radial-gradient(260px 130px at 55% 40%, rgba(255,255,255,.16), transparent 62%),
+        radial-gradient(300px 160px at 35% 60%, rgba(11,59,60,.08), transparent 68%);
+      opacity: calc(.40 + var(--iv) * .18);
+      pointer-events:none;
+      mix-blend-mode: overlay;
+      filter: url(#lg-distort);
+      transform: translateX(calc(var(--idir) * var(--iv) * 8px));
+    }
+
+    /* gloss line at top edge */
+    nav.tabbar:before{
+      content:"";
+      position:absolute;
+      left: 16px; right: 16px;
+      top: 10px;
+      height: 1px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.62), transparent);
+      opacity: .55;
+      pointer-events:none;
+      z-index: 4;
+    }
+
+    /* ==========================================================================
+       Sheets (services / more)
+       ========================================================================== */
+    .sheet-backdrop{
+      position: fixed;
+      inset: 0;
+      background: rgba(13,27,27,.42);
+      z-index: 110;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--med) var(--ease);
+    }
+    .sheet-backdrop[data-open="true"]{ opacity: 1; pointer-events: auto; }
+
+    .sheet{
+      position: fixed;
+      left: 0; right: 0;
+      bottom: calc(env(safe-area-inset-bottom) + 92px);
+      z-index: 115;
+      transform: translateY(18px) scale(.98);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform var(--med) var(--ease), opacity var(--med) var(--ease);
+    }
+    .sheet[data-open="true"]{
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0) scale(1);
+    }
+    .sheet .panel{
+      width: min(980px, calc(100% - 1.2rem));
+      margin: 0 auto;
+      border-radius: 24px;
+      padding: 12px;
+      position: relative;
+    }
+    .sheet-top{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 8px 8px 10px;
+      position: relative;
+      z-index: 2;
+    }
+    .sheet-title{
+      display:flex;
+      flex-direction: column;
+      gap: 2px;
+      padding-left: 6px;
+    }
+    .sheet-title strong{
+      font-family: Fraunces, serif;
+      font-weight: 650;
+      letter-spacing: -.1px;
+    }
+    .sheet-title span{ color: var(--muted); font-weight: 650; font-size: .95rem; }
+    .sheet-close{
+      width: 44px; height: 44px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.22);
+      background: rgba(255,255,255,.26);
+      cursor: pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow: 0 10px 22px rgba(13,27,27,.12);
+    }
+    .sheet-close:hover{ background: rgba(255,255,255,.34); }
+
+    .sheet-grid{
+      position: relative;
+      z-index: 2;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      padding: 6px 6px 10px;
+    }
+    .sheet-card{
+      border-radius: 18px;
+      border: 1px solid rgba(13,27,27,.10);
+      background: rgba(255,255,255,.82);
+      box-shadow: 0 12px 28px rgba(13,27,27,.08);
+      padding: 14px;
+      transition: transform var(--fast) var(--ease), box-shadow var(--fast) var(--ease), border-color var(--fast) var(--ease);
+    }
+    .sheet-card:hover{ transform: translateY(-1px); border-color: rgba(43,110,106,.20); box-shadow: 0 18px 40px rgba(13,27,27,.10); }
+    .sheet-card a{
+      display:flex;
+      align-items:flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .sheet-card strong{ font-weight: 900; }
+    .sheet-card .meta{ color: var(--muted); margin-top: 3px; display:block; }
+    .sheet-card .go{ width: 40px; height: 40px; border-radius: 14px; border: 1px solid rgba(13,27,27,.10); background: rgba(246,245,241,.85); display:flex; align-items:center; justify-content:center; flex: 0 0 auto; }
+
+    .sheet-links{
+      position: relative;
+      z-index: 2;
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 0 6px 8px;
+    }
+
+    /* ==========================================================================
+       Footer + back-to-top
+       ========================================================================== */
+    footer{
+      border-top: 1px solid rgba(13,27,27,.12);
+      background: linear-gradient(180deg, rgba(11,59,60,.95), rgba(11,59,60,.98));
+      color: rgba(255,255,255,.92);
+      padding: 30px 0 26px;
+    }
+    footer .footgrid{ display:grid; grid-template-columns: 1fr; gap: 18px; }
+    footer h3{ color:#fff; font-size: 1.05rem; margin: 0 0 10px; }
+    footer p, footer a{ color: rgba(255,255,255,.80); }
+    footer a{ text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+    footer a:hover{ color: rgba(255,255,255,.95); }
+    .footcard{
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      padding: 14px;
+    }
+    .footrow{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top: 10px; }
+    .footrow .pill{ background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.14); color: rgba(255,255,255,.92); }
+    .legal{
+      margin-top: 14px;
+      display:flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255,255,255,.12);
+      padding-top: 14px;
+    }
+    .legal small{ color: rgba(255,255,255,.72); }
+
+    .toTop{
+      position: fixed;
+      right: 14px;
+      bottom: calc(var(--tabSafe) + 10px);
+      z-index: 90;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(8px);
+      transition: opacity var(--med) var(--ease), transform var(--med) var(--ease);
+    }
+    .toTop[data-show="true"]{ opacity: 1; pointer-events: auto; transform: translateY(0); }
+
+    /* ==========================================================================
+       Responsive
+       ========================================================================== */
+    @media (min-width: 860px){
+      .hero-grid{ grid-template-columns: 1.2fr .8fr; gap: 22px; align-items: center; }
+      .media-stack{ grid-template-columns: 1fr 1.35fr; align-items: stretch; }
+      .media-card.portrait{ max-width: none; }
+      .grid{ grid-template-columns: repeat(2, 1fr); }
+      .grid.cols3{ grid-template-columns: repeat(3, 1fr); }
+      .split{ grid-template-columns: 1.1fr .9fr; }
+      footer .footgrid{ grid-template-columns: 1.2fr .8fr 1fr; }
+
+      .tab.desktop{ display:flex; }
+      .tab.more .tlabel{ display:inline; }
+      .tab.more{ width: auto; padding: 0 14px; }
+      .tabbar-wrap[data-compact="true"] .tab .tlabel{ opacity: 1; transform:none; }
+    }
+    @media (min-width: 1080px){
+      .grid.cols3{ grid-template-columns: repeat(3, 1fr); }
+      .sheet-grid{ grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ==========================================================================
+       Reduced motion
+       ========================================================================== */
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior: auto; }
+      *{ scroll-behavior: auto !important; }
+      .btn, .card, .tab, .sheet, .sheet-backdrop, .toTop, [data-reveal], .tabbar-wrap{ transition: none !important; animation: none !important; }
+      [data-reveal]{ opacity: 1 !important; transform: none !important; }
+      details[open] summary .chev{ transform: none !important; }
+      .liquid > .distort, .liquid > .spec{ display:none !important; }
+      .tab-indicator::before, .tab-indicator::after{ filter: none !important; opacity: .55 !important; transform:none !important; }
+      .tabbar-wrap[data-compact="true"]{ transform:none !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <div class="sr-only" id="route-announcer" role="status" aria-live="polite"></div>
+
+  <!-- SVG filters for "liquid glass" distortion + soft goo for indicator -->
+  <svg class="sr-only" width="0" height="0" aria-hidden="true" focusable="false">
+    <filter id="lg-distort">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="2" result="noise">
+        <animate attributeName="baseFrequency" dur="10s" values="0.010;0.018;0.010" repeatCount="indefinite" />
+        <animate attributeName="seed" dur="14s" values="2;9;2" repeatCount="indefinite" />
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="22" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+
+    <filter id="lg-goo-soft">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="0.45" result="blur" />
+      <feColorMatrix in="blur" mode="matrix"
+        values="1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                0 0 0 18 -9" result="goo"/>
+      <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+    </filter>
+  </svg>
+
+  <div class="infobar" role="region" aria-label="Schnellinfo">
+    <div class="container wrap">
+      <div class="pill" id="infobar-insurance">
+        <span aria-hidden="true">●</span>
+        <span>Alle Kassen und Privat</span>
+      </div>
+      <div>
+        <a class="tel" id="infobar-tel" href="tel:+436643061010">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6.6 10.8c1.4 2.7 3.9 5.1 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.2 1.3.5 2.8.8 4.3.8.7 0 1.2.5 1.2 1.2V21c0 .7-.5 1.2-1.2 1.2C10.4 22.2 1.8 13.6 1.8 3.6 1.8 2.9 2.3 2.4 3 2.4h4.3c.7 0 1.2.5 1.2 1.2 0 1.5.3 3 .8 4.3.1.4 0 .9-.2 1.2l-2.5 1.7Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>+43 664 306 10 10</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header" data-header>
+    <div class="container header-row">
+      <a class="brand" href="/" data-link aria-label="Startseite">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-title">
+          <strong>Ordination Dr. Ruth Lechner</strong>
+          <span>Innere Medizin · Zusatzfach Geriatrie</span>
+        </span>
+      </a>
+
+      <div style="display:flex; align-items:center; gap:10px;">
+        <a class="btn primary" href="/kontakt" data-link data-cta>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6.6 10.8c1.4 2.7 3.9 5.1 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.2 1.3.5 2.8.8 4.3.8.7 0 1.2.5 1.2 1.2V21c0 .7-.5 1.2-1.2 1.2C10.4 22.2 1.8 13.6 1.8 3.6 1.8 2.9 2.3 2.4 3 2.4h4.3c.7 0 1.2.5 1.2 1.2 0 1.5.3 3 .8 4.3.1.4 0 .9-.2 1.2l-2.5 1.7Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Termin vereinbaren
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Smart Island (Mobile): Dynamic-Island-artiger Schnellzugriff ohne Platzverschwendung -->
+  <div class="island-wrap" id="islandWrap">
+    <div class="smart-island liquid liquid-dark" id="smartIsland" data-state="collapsed" data-compact="false" role="region" aria-label="Schnellzugriff">
+      <span class="rim" aria-hidden="true"></span>
+      <span class="distort" aria-hidden="true"></span>
+      <span class="spec" aria-hidden="true"></span>
+
+      <div class="island-bar" id="islandBar">
+        <button class="island-main" type="button" id="islandToggle" aria-expanded="false" aria-controls="islandPanel">
+          <span class="island-dot" id="islandDot" aria-hidden="true"></span>
+          <span class="island-text">
+            <span class="island-title" id="islandTitle">—</span>
+            <span class="island-sub" id="islandSub">—</span>
+          </span>
+        </button>
+
+        <a class="island-icon" id="islandCall" href="tel:+436643061010" aria-label="Jetzt anrufen">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M22 16.9v3a2 2 0 0 1-2.2 2 20.1 20.1 0 0 1-8.8-3.1 19.7 19.7 0 0 1-6-6A20.1 20.1 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .6 3a2 2 0 0 1-.4 2.1L8.2 10a16 16 0 0 0 6 6l1.2-1.1a2 2 0 0 1 2.1-.4c1 .3 2 .5 3 .6A2 2 0 0 1 22 16.9Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+        <button class="island-icon" type="button" id="islandQuickServices" aria-label="Leistungen öffnen">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M8 6h13M8 12h13M8 18h13" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+            <path d="M4.5 6h.01M4.5 12h.01M4.5 18h.01" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/>
+          </svg>
+        </button>
+
+        <button class="island-icon close" type="button" id="islandClose" aria-label="Schließen">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="island-panel" id="islandPanel" hidden>
+        <div class="island-panel-inner">
+          <div class="island-head">
+            <div>
+              <strong id="islandPracticeName">Ordination Dr. Ruth Lechner</strong>
+              <span id="islandContext">Schnellaktionen</span>
+            </div>
+            <span class="island-status" id="islandStatusChip">—</span>
+          </div>
+
+          <div class="island-chips" id="islandChips"></div>
+
+          <div class="island-actions" id="islandActions"></div>
+
+          <div class="island-mini" id="islandMiniInfo"></div>
+
+          <div class="island-toast" id="islandToast" role="status" aria-live="polite" hidden>
+            <span id="islandToastText">—</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="island-backdrop" id="islandBackdrop" hidden></div>
+
+
+  <main id="main" tabindex="-1">
+    <div id="view" class="view">
+      <!-- JS renders per route -->
+      <div class="container">
+        <div class="pagehead">
+          <span class="kicker">Alle Kassen und Privat</span>
+          <h1>Internistische Facharztordination mit Zusatzfach Geriatrie</h1>
+          <p class="lead">Termine nur nach telefonischer Vereinbarung. Telefonisch erreichbar unter +43 664 306 10 10.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footgrid" id="footer-grid"></div>
+      <div class="legal">
+        <small id="footcopy">© <span id="year"></span> Ordination Dr. Ruth Lechner</small>
+        <div class="footrow">
+          <a href="/impressum" data-link>Impressum</a>
+          <a href="/datenschutzerklarung" data-link>Datenschutzerklärung</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toTop" id="toTop" data-show="false">
+    <button class="btn" type="button" id="toTopBtn" aria-label="Nach oben">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M12 5v14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="m6 11 6-6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Nach oben
+    </button>
+  </div>
+
+  <!-- Floating Liquid Glass Tab Bar -->
+  <div class="tabbar-wrap" id="tabbarWrap" data-compact="false" aria-hidden="false">
+    <nav class="tabbar liquid" id="tabbar" aria-label="Hauptnavigation">
+      <span class="rim" aria-hidden="true"></span>
+      <span class="distort" aria-hidden="true"></span>
+      <span class="spec" aria-hidden="true"></span>
+
+      <span class="tab-indicator" id="tabIndicator" aria-hidden="true"></span>
+
+      <a class="tab" href="/" data-link data-nav="home" aria-label="Home">
+        <svg class="ticon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1v-10.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        <span class="tlabel">Home</span>
+      </a>
+
+      <button class="tab" type="button" data-nav="services" aria-expanded="false" aria-controls="sheet-services" id="open-services">
+        <svg class="ticon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M3.5 6h.5M3.5 12h.5M3.5 18h.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span class="tlabel">Leistungen</span>
+      </button>
+
+      <a class="tab" href="/kontakt" data-link data-nav="kontakt" aria-label="Kontakt">
+        <svg class="ticon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.7 3.9 5.1 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.2 1.3.5 2.8.8 4.3.8.7 0 1.2.5 1.2 1.2V21c0 .7-.5 1.2-1.2 1.2C10.4 22.2 1.8 13.6 1.8 3.6 1.8 2.9 2.3 2.4 3 2.4h4.3c.7 0 1.2.5 1.2 1.2 0 1.5.3 3 .8 4.3.1.4 0 .9-.2 1.2l-2.5 1.7Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="tlabel">Kontakt</span>
+      </a>
+
+      <a class="tab desktop" href="/impressum" data-link data-nav="impressum" aria-label="Impressum">
+        <svg class="ticon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 3h10v18H7V3Z" stroke="currentColor" stroke-width="2"/><path d="M9 7h6M9 11h6M9 15h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span class="tlabel">Impressum</span>
+      </a>
+
+      <a class="tab desktop" href="/datenschutzerklarung" data-link data-nav="datenschutz" aria-label="Datenschutz">
+        <svg class="ticon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 20 6v6c0 5-3.5 9.4-8 10-4.5-.6-8-5-8-10V6l8-4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <span class="tlabel">Datenschutz</span>
+      </a>
+
+      <button class="tab more" type="button" data-nav="more" aria-expanded="false" aria-controls="sheet-more" id="open-more">
+        <svg class="ticon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h.01M12 12h.01M19 12h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+        <span class="tlabel">Mehr</span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- Sheets -->
+  <div class="sheet-backdrop" id="sheet-backdrop" data-open="false" hidden></div>
+
+  <section class="sheet" id="sheet-services" data-open="false" hidden role="dialog" aria-modal="true" aria-label="Leistungen">
+    <div class="panel liquid">
+      <span class="rim" aria-hidden="true"></span>
+      <span class="distort" aria-hidden="true"></span>
+      <span class="spec" aria-hidden="true"></span>
+
+      <div class="sheet-top">
+        <div class="sheet-title">
+          <strong>Leistungen</strong>
+          <span>Übersicht &amp; Unterseiten</span>
+        </div>
+        <button class="sheet-close" type="button" data-sheet-close aria-label="Leistungen schließen">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+
+      <div class="sheet-links">
+        <a class="btn" href="/leistungen" data-link style="box-shadow:none;">Zur Übersicht</a>
+        <a class="btn primary" href="/kontakt" data-link style="box-shadow:none;">Termin vereinbaren</a>
+      </div>
+
+      <div class="sheet-grid" id="services-sheet-grid"></div>
+    </div>
+  </section>
+
+  <section class="sheet" id="sheet-more" data-open="false" hidden role="dialog" aria-modal="true" aria-label="Mehr">
+    <div class="panel liquid">
+      <span class="rim" aria-hidden="true"></span>
+      <span class="distort" aria-hidden="true"></span>
+      <span class="spec" aria-hidden="true"></span>
+
+      <div class="sheet-top">
+        <div class="sheet-title">
+          <strong>Mehr</strong>
+          <span>Rechtliches &amp; Links</span>
+        </div>
+        <button class="sheet-close" type="button" data-sheet-close aria-label="Menü schließen">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+
+      <div class="sheet-grid" id="more-sheet-grid"></div>
+    </div>
+  </section>
+
+  <noscript>
+    <div class="container" style="padding: 24px 0 40px;">
+      <div class="callout">
+        <strong>JavaScript ist deaktiviert.</strong>
+        <p>Diese Website nutzt clientseitiges Routing. Bitte aktivieren Sie JavaScript oder nutzen Sie die folgenden Kontaktdaten:</p>
+        <p style="margin-top:10px;">
+          Ordination Dr. Ruth Lechner · Dr. Arthur Lemisch Straße 9/1, 9560 Feldkirchen, Österreich ·
+          Tel. <a href="tel:+436643061010">+43 664 306 10 10</a> · Tel. <a href="tel:+4342767225">+43 4276 7225</a> · Fax +43 4276 7225 20
+        </p>
+      </div>
+    </div>
+  </noscript>
+
+  <script>
+    (() => {
+      'use strict';
+
+      /* ==========================================================================
+         Single Source of Truth (Praxisdaten + Leistungen)
+         ========================================================================== */
+      const practice = {
+        name: "Ordination Dr. Ruth Lechner",
+        physician: "Dr. Ruth Lechner",
+        positioning: "Fachärztin für Innere Medizin, Zusatzfach Geriatrie",
+        diplomas: ["Geriatrie", "Palliativmedizin", "Akupunktur"],
+        insurance: "Alle Kassen und Privat",
+        appointmentNote: "Termine nur nach telefonischer Vereinbarung",
+        address: {
+          street: "Dr. Arthur Lemisch Straße 9/1",
+          zip: "9560",
+          city: "Feldkirchen",
+          country: "Österreich"
+        },
+        contact: {
+          telPrimary: { label: "+43 664 306 10 10", href: "tel:+436643061010" },
+          telSecondary:{ label: "+43 4276 7225", href: "tel:+4342767225" },
+          fax: { label: "+43 4276 7225 20" } // EINHEITLICH korrekt
+        },
+        openingHours: [
+          { dayShort: "Mo", dayLong: "Montag",    opens: "07:30", closes: "13:00" },
+          { dayShort: "Di", dayLong: "Dienstag",  opens: "07:30", closes: "13:00" },
+          { dayShort: "Mi", dayLong: "Mittwoch",  opens: "14:00", closes: "18:00" },
+          { dayShort: "Do", dayLong: "Donnerstag",opens: "07:30", closes: "13:00" },
+          { dayShort: "Fr", dayLong: "Freitag",   opens: "07:30", closes: "09:00" }
+        ],
+        areaServed: "Feldkirchen, Kärnten",
+        images: {
+          portrait: "https://www.inneremedizin-lechner.at/uploads/51lCwt24/320x0_480x0/Portrait_fr_Ordination2.webp",
+          practice:  "https://www.inneremedizin-lechner.at/uploads/RGN9jdbZ/768x0_640x0/AdobeStock_562280510-T.jpg"
+        }
+      };
+
+      const services = [
+        {
+          id: "ultraschall",
+          title: "Ultraschall",
+          short: "Schonende Bildgebung zur Beurteilung von Organen, Gefäßen und Herz.",
+          badge: "Diagnostik",
+          path: "/leistungen/ultraschall",
+          seo: {
+            title: "Ultraschall in Feldkirchen – Ordination Dr. Ruth Lechner",
+            description: "Ultraschalluntersuchungen (Ober-/Unterbauch, Schilddrüse, Halsgefäße, Echokardiographie) – rasch, sicher und schonend."
+          },
+          benefits: [
+            "Nicht-invasiv und schmerzfrei",
+            "Rasche Orientierung bei Fragestellungen",
+            "Unterstützt die individuelle Risikoabschätzung"
+          ],
+          items: [
+            { title: "Ober- und Unterbauch", hint: "Leber, Gallenblase, Nieren, Blase u. a.", body: "Beurteilung innerer Organe im Bauchraum – etwa Größe, Struktur und Auffälligkeiten. Die Untersuchung ist in der Regel rasch durchführbar und kommt ohne Strahlenbelastung aus." },
+            { title: "Schilddrüse", hint: "Knoten, Volumen, Gewebestruktur", body: "Ultraschall zur Einschätzung der Schilddrüse – z. B. bei tastbaren Veränderungen oder zur Verlaufskontrolle. Je nach Fragestellung kann eine weitere Abklärung sinnvoll sein." },
+            { title: "Halsgefäße", hint: "Durchblutung und Gefäßwand", body: "Untersuchung der Halsgefäße zur Beurteilung von Blutfluss und Gefäßwand. Das kann helfen, Risiken im Rahmen der Vorsorge oder bei spezifischen Symptomen besser einzuordnen." },
+            { title: "Echokardiographie", hint: "Herzstruktur und -funktion", body: "Herzultraschall zur Beurteilung von Herzkammern, Klappen und Pumpfunktion. Die Ergebnisse werden verständlich besprochen und in den Gesamtkontext eingeordnet." }
+          ],
+          cta: { label: "Termin vereinbaren", href: "/kontakt" }
+        },
+        {
+          id: "ekg",
+          title: "EKG",
+          short: "Herzdiagnostik vom Ruhe-EKG bis zur 24-Stunden-Messung.",
+          badge: "Diagnostik",
+          path: "/leistungen/ekg",
+          seo: {
+            title: "EKG in Feldkirchen – Ordination Dr. Ruth Lechner",
+            description: "Ruhe-EKG, Rhythmusstreifen, Belastungs-EKG, 24-Stunden-EKG und 24-Stunden-Blutdruckmessung – verständlich erklärt und besprochen."
+          },
+          benefits: [
+            "Erfasst Herzrhythmus und Herzfrequenz",
+            "Belastungs- und Langzeitmessungen bei Bedarf",
+            "Strukturierte Befundbesprechung"
+          ],
+          items: [
+            { title: "Ruhe-EKG", hint: "Kurztest in Ruhe", body: "Aufzeichnung der elektrischen Herzaktivität in Ruhe. Dient als Basisbefund und kann Hinweise liefern, die in Kombination mit Anamnese und Untersuchung bewertet werden." },
+            { title: "Rhythmusstreifen", hint: "Gezielte Rhythmusbeurteilung", body: "Kurze EKG-Aufzeichnung mit Fokus auf den Herzrhythmus – z. B. bei gelegentlichem Herzstolpern. Je nach Häufigkeit kann ein Langzeit-EKG aussagekräftiger sein." },
+            { title: "Belastungs-EKG", hint: "EKG unter körperlicher Belastung", body: "Beurteilung von Herzfrequenz, Rhythmus und Blutdruck unter kontrollierter Belastung. Ergebnisse werden immer im Zusammenhang mit Ihrem Gesamtbild interpretiert." },
+            { title: "24-Stunden-EKG", hint: "Langzeitaufzeichnung", body: "Tragbares Gerät zeichnet den Herzrhythmus über 24 Stunden auf. Sinnvoll bei sporadischen Beschwerden, die im kurzen Ruhe-EKG nicht sichtbar sind." },
+            { title: "24-Stunden-Blutdruckmessung", hint: "Tages- und Nachtprofil", body: "Automatische Messungen über 24 Stunden liefern ein Blutdruckprofil (Tag/Nacht) und unterstützen eine differenzierte Einordnung – auch im Verlauf." }
+          ],
+          cta: { label: "Termin vereinbaren", href: "/kontakt" }
+        },
+        {
+          id: "vorsorgeuntersuchung",
+          title: "Vorsorgeuntersuchung",
+          short: "Individuelle Gesundenuntersuchung mit persönlicher Beratung und Plan.",
+          badge: "Vorsorge",
+          path: "/leistungen/vorsorgeuntersuchung",
+          seo: {
+            title: "Vorsorgeuntersuchung – Ordination Dr. Ruth Lechner",
+            description: "Gesundenuntersuchung mit Anamnese, Risiko-Check und ausgewählten Untersuchungen (z. B. Blutdruck, Blutwerte, EKG). Persönliche Beratung, klare Schritte."
+          },
+          benefits: [
+            "Früherkennung und Risikofaktoren im Blick",
+            "Individuelle Planung statt Standardprogramm",
+            "Praktische Empfehlungen für den Alltag"
+          ],
+          steps: [
+            { title: "Gespräch & Anamnese", body: "Wir besprechen Beschwerden, Vorerkrankungen, Lebensstil und familiäre Risiken – als Grundlage für die weiteren Schritte." },
+            { title: "Untersuchung & Messwerte", body: "Körperliche Untersuchung sowie relevante Messungen (z. B. Blutdruck). Ergänzende Diagnostik je nach Situation." },
+            { title: "Befundbesprechung", body: "Ergebnisse werden verständlich erläutert – inklusive Einordnung und Prioritäten." },
+            { title: "Individueller Plan", body: "Gemeinsam legen wir sinnvolle nächste Schritte fest: Kontrollen, Lebensstil-Themen oder weiterführende Abklärungen." }
+          ],
+          items: [
+            { title: "Typische Bestandteile (Beispiele)", hint: "je nach individueller Situation", body: "Je nach Fragestellung können unter anderem Blutdruckmessung, Ruhe-EKG, Blutwerte/Labor, Gewicht/BMI sowie weitere Untersuchungen sinnvoll sein. Der konkrete Umfang wird gemeinsam festgelegt." },
+            { title: "Hinweis Österreich", hint: "einmal jährlich möglich (unter Bedingungen)", body: "In Österreich ist die Vorsorgeuntersuchung für Versicherte ab 18 Jahren grundsätzlich einmal jährlich kostenlos möglich. Details können je nach Kasse/Programm variieren – wir informieren gerne, was für Sie passt." }
+          ],
+          cta: { label: "Termin vereinbaren", href: "/kontakt" }
+        },
+        {
+          id: "op-tauglichkeit",
+          title: "OP‑Tauglichkeit",
+          short: "Voruntersuchung zur Risikominimierung mit schriftlichem Befund für den Eingriff.",
+          badge: "Vorbereitung",
+          path: "/leistungen/op-tauglichkeit",
+          seo: {
+            title: "OP‑Tauglichkeit – Ordination Dr. Ruth Lechner",
+            description: "OP-Freigabe/Präoperative Abklärung: körperliche Untersuchung, Blutbefund, EKG und Blutdruck – ggf. weitere Diagnostik. Befunde meist ≤ 14 Tage."
+          },
+          benefits: [
+            "Unterstützt die Risikoeinschätzung vor dem Eingriff",
+            "Strukturierter Befund für Operateur:in/Anästhesie",
+            "Berücksichtigung von Krankengeschichte und Medikation"
+          ],
+          items: [
+            { title: "Ziel der Untersuchung", hint: "Sicherheit und Planung", body: "Die präoperative Abklärung dient dazu, Risiken zu minimieren und relevante Faktoren (z. B. Vorerkrankungen, aktuelle Beschwerden, Medikation) strukturiert zusammenzufassen. Es erfolgt eine schriftliche Dokumentation für den weiteren Ablauf." },
+            { title: "Typische Untersuchungen", hint: "je nach Eingriff und Vorgaben", body: "Häufig umfassen die Schritte körperliche Untersuchung, Blutbefund, Ruhe-EKG und Blutdruck. Je nach Fragestellung können ergänzend z. B. Lungenröntgen oder Herzultraschall sinnvoll sein." },
+            { title: "Unterlagen & Zeitfenster", hint: "Befunde meist aktuell", body: "Bitte bringen Sie vorhandene Vorbefunde und eine aktuelle Medikamentenliste mit. Je nach Vorgabe werden Befunde häufig innerhalb der letzten 14 Tage vor dem Eingriff benötigt." }
+          ],
+          cta: { label: "Termin vereinbaren", href: "/kontakt" }
+        }
+      ];
+
+      /* ==========================================================================
+         Helpers
+         ========================================================================== */
+      const $ = (sel, root = document) => root.querySelector(sel);
+      const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+      const prefersReducedMotion = () => window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function normalizePath(pathname) {
+        let p = (pathname || '/').split('?')[0].split('#')[0];
+        if (!p.startsWith('/')) p = '/' + p;
+        if (p.length > 1 && p.endsWith('/')) p = p.slice(0, -1);
+        return p;
+      }
+
+      function safeScrollTop() {
+        const reduce = prefersReducedMotion();
+        try { window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); }
+        catch { window.scrollTo(0, 0); }
+      }
+
+      function setLoaded(img) {
+        if (!img) return;
+        const mark = () => img.setAttribute('data-loaded', 'true');
+        img.setAttribute('data-loaded', img.complete ? 'true' : 'false');
+        if (!img.complete) img.addEventListener('load', mark, { once: true });
+      }
+
+      function icons(name) {
+        const common = 'viewBox="0 0 24 24" fill="none" aria-hidden="true"';
+        switch (name) {
+          case 'arrow':
+            return `<svg class="icon" ${common}><path d="M5 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="m13 6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+          case 'check':
+            return `<svg class="icon" ${common}><path d="m20 6-11 11-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+          case 'shield':
+            return `<svg class="icon" ${common}><path d="M12 2 20 6v6c0 5-3.5 9.4-8 10-4.5-.6-8-5-8-10V6l8-4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>`;
+          case 'clock':
+            return `<svg class="icon" ${common}><path d="M12 22a10 10 0 1 0-10-10 10 10 0 0 0 10 10Z" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+          case 'map':
+            return `<svg class="icon" ${common}><path d="M10 20 4 18V6l6 2 4-2 6 2v12l-6-2-4 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M10 8v12M14 6v12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>`;
+          case 'phone':
+            return `<svg class="icon" ${common}><path d="M6.6 10.8c1.4 2.7 3.9 5.1 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.2 1.3.5 2.8.8 4.3.8.7 0 1.2.5 1.2 1.2V21c0 .7-.5 1.2-1.2 1.2C10.4 22.2 1.8 13.6 1.8 3.6 1.8 2.9 2.3 2.4 3 2.4h4.3c.7 0 1.2.5 1.2 1.2 0 1.5.3 3 .8 4.3.1.4 0 .9-.2 1.2l-2.5 1.7Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+          default:
+            return '';
+        }
+      }
+
+      function addrLine() {
+        return `${practice.address.street}, ${practice.address.zip} ${practice.address.city}, ${practice.address.country}`;
+      }
+
+      function mapsLinks() {
+        const q = encodeURIComponent(addrLine());
+        return {
+          google: `https://www.google.com/maps/search/?api=1&query=${q}`,
+          osm: `https://www.openstreetmap.org/search?query=${q}`
+        };
+      }
+
+      /* ==========================================================================
+         Templates
+         ========================================================================== */
+      function tplCrumbs(items) {
+        return `
+          <nav class="crumbs" aria-label="Breadcrumb">
+            ${items.map((it, i) => i === items.length - 1
+              ? `<span aria-current="page">${it.label}</span>`
+              : `<a href="${it.href}" data-link>${it.label}</a><span aria-hidden="true">/</span>`
+            ).join('')}
+          </nav>
+        `;
+      }
+
+      function tplCallout({title, body, primary, secondary}) {
+        return `
+          <div class="callout" data-reveal>
+            <div class="row">
+              <div>
+                <strong>${title}</strong>
+                <p>${body}</p>
+              </div>
+              <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                ${primary ? `<a class="btn primary" href="${primary.href}" data-link>${primary.label}</a>` : ''}
+                ${secondary ? `<a class="btn" href="${secondary.href}" ${secondary.external ? 'target="_blank" rel="noopener noreferrer"' : 'data-link'}>${secondary.label}</a>` : ''}
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      function tplServiceCard(s) {
+        return `
+          <a class="card" href="${s.path}" data-link data-reveal aria-label="${s.title} – Details">
+            <div class="top">
+              <span class="badge">${s.badge}</span>
+              <span class="arrow" aria-hidden="true">${icons('arrow')}</span>
+            </div>
+            <div style="margin-top:10px;">
+              <h3 style="margin-bottom:6px;">${s.title}</h3>
+              <p>${s.short}</p>
+            </div>
+          </a>
+        `;
+      }
+
+      function tplTicks(items) {
+        return `
+          <ul class="ticks">
+            ${items.map(t => `<li>${icons('check')} <span>${t}</span></li>`).join('')}
+          </ul>
+        `;
+      }
+
+      function tplAccordions(items) {
+        return items.map((it) => `
+          <details class="accordion" data-accordion>
+            <summary>
+              <span>
+                ${it.title}
+                ${it.hint ? `<span class="hint"> · ${it.hint}</span>` : ''}
+              </span>
+              <span class="chev" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24" fill="none">
+                  <path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </summary>
+            <div class="content">${it.body}</div>
+          </details>
+        `).join('');
+      }
+
+      function tplHoursTable() {
+        return `
+          <table class="table" aria-label="Ordinationszeiten">
+            <thead><tr><th>Tag</th><th>Zeiten</th></tr></thead>
+            <tbody>
+              ${practice.openingHours.map(h => `
+                <tr>
+                  <td><strong>${h.dayShort}</strong> <span class="small">(${h.dayLong})</span></td>
+                  <td>${h.opens}–${h.closes}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        `;
+      }
+
+      function tplPageHeader({kicker, h1, lead, crumbs, actions, asideHtml}) {
+        return `
+          <div class="container">
+            <div class="pagehead">
+              ${kicker ? `<span class="kicker">${kicker}</span>` : ''}
+              ${crumbs || ''}
+              <h1>${h1}</h1>
+              ${lead ? `<p class="lead">${lead}</p>` : ''}
+              ${actions ? `<div class="hero-actions">${actions}</div>` : ''}
+            </div>
+          </div>
+          ${asideHtml || ''}
+        `;
+      }
+
+      /* ==========================================================================
+         Page renderers
+         ========================================================================== */
+      function renderHome() {
+        const dipl = practice.diplomas.map(d => `<span class="pill" style="background:rgba(217,199,167,.22); border-color:rgba(217,199,167,.42); color:rgba(13,27,27,.92);">${d}</span>`).join('');
+        return `
+          <section class="hero">
+            <div class="container hero-grid">
+              <div>
+                <span class="kicker">${practice.insurance}</span>
+                <h1>Internistische Facharztordination mit Zusatzfach Geriatrie</h1>
+                <p class="lead">
+                  Ihre Gesundheit und Ihr Wohlergehen stehen im Mittelpunkt – mit Zeit für Patient:innen,
+                  verständlicher Befundbesprechung und moderner Diagnostik.
+                </p>
+
+                <div class="hero-actions">
+                  <a class="btn primary" href="/kontakt" data-link>${icons('phone')} Termin vereinbaren</a>
+                  <button class="btn" type="button" data-open-services>Leistungen ansehen</button>
+                </div>
+
+                <div class="trustrow" aria-label="Kurzinfos">
+                  <span class="trust">${icons('shield')} <span><strong>${practice.insurance}</strong><br><small>alle Kassen &amp; privat</small></span></span>
+                  <span class="trust">${icons('clock')} <span><strong>Termine</strong><br><small>nur telefonisch</small></span></span>
+                </div>
+
+                <div class="section cv-auto">
+                  <h2 data-reveal>Was Sie bei uns erwartet</h2>
+                  <div class="grid cols3">
+                    <div class="card" data-reveal>
+                      <div class="top">
+                        <span class="badge">Innere Medizin</span>
+                        <span class="arrow" aria-hidden="true">${icons('arrow')}</span>
+                      </div>
+                      <div style="margin-top:10px;">
+                        <h3>Ganzheitlicher Blick</h3>
+                        <p>
+                          Innere Medizin umfasst Organsysteme wie Herz-Kreislauf, Lunge, Verdauung, Stoffwechsel und mehr.
+                          Wir nehmen Beschwerden und Risiken systematisch auf und planen die nächsten Schritte nachvollziehbar.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="card" data-reveal>
+                      <div class="top">
+                        <span class="badge">Geriatrie</span>
+                        <span class="arrow" aria-hidden="true">${icons('arrow')}</span>
+                      </div>
+                      <div style="margin-top:10px;">
+                        <h3>Zusatzfach</h3>
+                        <p>
+                          Spezielle Schwerpunkte für die Medizin im höheren Lebensalter – mit Fokus auf Funktion,
+                          Alltagstauglichkeit und abgestimmter Therapieplanung.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="card" data-reveal>
+                      <div class="top">
+                        <span class="badge">Diplome</span>
+                        <span class="arrow" aria-hidden="true">${icons('arrow')}</span>
+                      </div>
+                      <div style="margin-top:10px;">
+                        <h3>Schwerpunkte</h3>
+                        <p>Ergänzende Qualifikationen mit patient:innenorientiertem Ansatz:</p>
+                        <div class="footrow" style="margin-top:10px;">${dipl}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="section cv-auto">
+                  ${tplCallout({
+                    title: "Gründliche Untersuchung & individuelle Behandlung",
+                    body: "Wir kombinieren Gespräch, Untersuchung und bei Bedarf moderne Diagnostik (z. B. EKG/Ultraschall). Ergebnisse werden transparent besprochen – mit klaren Empfehlungen für das weitere Vorgehen.",
+                    primary: { label: "Termin vereinbaren", href: "/kontakt" },
+                    secondary: { label: "Kontakt", href: "/kontakt" }
+                  })}
+                </div>
+              </div>
+
+              <div class="hero-media" aria-label="Praxisbilder">
+                <div class="media-stack">
+                  <div class="media-card portrait" data-reveal>
+                    <div class="imgwrap">
+                      <img src="${practice.images.portrait}" alt="Portrait von Dr. Ruth Lechner" decoding="async" fetchpriority="high" />
+                    </div>
+                    <div class="media-meta">
+                      <div class="glass">
+                        <strong>${practice.physician}</strong>
+                        <span>${practice.positioning}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="media-card" data-reveal>
+                    <div class="imgwrap">
+                      <img src="${practice.images.practice}" alt="Einblicke in eine moderne Praxisumgebung" decoding="async" fetchpriority="high" />
+                    </div>
+                    <div class="media-meta">
+                      <div class="glass">
+                        <strong>Zeit für Patient:innen</strong>
+                        <span>strukturierte Befundbesprechung &amp; klare nächste Schritte</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="section" style="padding:14px 0 0;">
+                  <div class="callout" data-reveal>
+                    <div class="row">
+                      <div>
+                        <strong>Gesundenuntersuchung bei der Internistin</strong>
+                        <p>
+                          Vorsorge kann helfen, Risikofaktoren früh zu erkennen und gezielt anzugehen.
+                          Wir besprechen Ihre Situation, priorisieren Untersuchungen und leiten daraus einen individuellen Plan ab.
+                        </p>
+                      </div>
+                      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                        <a class="btn" href="/leistungen/vorsorgeuntersuchung" data-link>Mehr zur Vorsorge</a>
+                        <a class="btn primary" href="/kontakt" data-link>Termin vereinbaren</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </section>
+
+          <section class="section cv-auto">
+            <div class="container">
+              <div class="split">
+                <div class="stack">
+                  <h2 data-reveal>Leistungen – auf einen Blick</h2>
+                  <p data-reveal>
+                    Diagnostik und Vorsorge sind wichtige Bausteine einer guten internistischen Betreuung.
+                    Auf den folgenden Seiten finden Sie verständliche Informationen zu häufigen Untersuchungen.
+                  </p>
+                  <div class="grid cols3">
+                    ${services.map(tplServiceCard).join('')}
+                  </div>
+                </div>
+
+                <div class="stack">
+                  <h2 data-reveal>Schnell zum Kontakt</h2>
+                  <div class="card" data-reveal>
+                    <h3>Adresse</h3>
+                    <p>${addrLine()}</p>
+                    <div class="hr"></div>
+                    <h3>Telefon</h3>
+                    <p>
+                      <a href="${practice.contact.telPrimary.href}">${practice.contact.telPrimary.label}</a><br/>
+                      <a href="${practice.contact.telSecondary.href}">${practice.contact.telSecondary.label}</a>
+                    </p>
+                    <p class="small" style="margin-top:8px;"><strong>Fax:</strong> ${practice.contact.fax.label}</p>
+                    <div class="hr"></div>
+                    <p class="small"><strong>${practice.appointmentNote}</strong></p>
+                    <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+                      <a class="btn primary" href="/kontakt" data-link>Termin vereinbaren</a>
+                      <a class="btn" href="/kontakt" data-link>Kontakt &amp; Öffnungszeiten</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        `;
+      }
+
+      function renderServicesHub() {
+        return `
+          <section class="section">
+            ${tplPageHeader({
+              kicker: "Leistungen",
+              h1: "Untersuchungen und Beratung in der Internistischen Ordination",
+              lead: "Von Ultraschall und EKG bis zur Vorsorge und OP‑Tauglichkeit: Hier finden Sie eine übersichtliche Auswahl – mit verständlichen Details pro Leistung.",
+              actions: `
+                <a class="btn primary" href="/kontakt" data-link>${icons('phone')} Termin vereinbaren</a>
+                <a class="btn" href="/kontakt" data-link>Kontakt</a>
+              `
+            })}
+            <div class="container cv-auto">
+              <div class="grid cols3">
+                ${services.map(tplServiceCard).join('')}
+              </div>
+              <div class="section">
+                ${tplCallout({
+                  title: "Befunde verständlich besprochen",
+                  body: "Wir erklären Ergebnisse in klarer Sprache, ordnen sie ein und besprechen, welche nächsten Schritte sinnvoll sind – immer individuell und ohne unnötige Umwege.",
+                  primary: { label: "Termin vereinbaren", href: "/kontakt" }
+                })}
+              </div>
+            </div>
+          </section>
+        `;
+      }
+
+      function renderServiceDetail(serviceId) {
+        const s = services.find(x => x.id === serviceId);
+        if (!s) return renderNotFound();
+
+        const crumbs = tplCrumbs([
+          { label: "Home", href: "/" },
+          { label: "Leistungen", href: "/leistungen" },
+          { label: s.title, href: s.path }
+        ]);
+
+        const extra = s.steps ? `
+          <div class="section cv-auto">
+            <h2 data-reveal>Ablauf – typische Schritte</h2>
+            <div class="steps">
+              ${s.steps.map((st, i) => `
+                <div class="step" data-reveal>
+                  <div class="num" aria-hidden="true">${i + 1}</div>
+                  <div>
+                    <h3 style="margin:0 0 4px;">${st.title}</h3>
+                    <p>${st.body}</p>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        ` : '';
+
+        return `
+          <section class="section">
+            ${tplPageHeader({
+              kicker: s.badge,
+              crumbs,
+              h1: s.title,
+              lead: s.short,
+              actions: `
+                <a class="btn primary" href="${s.cta.href}" data-link>${icons('phone')} ${s.cta.label}</a>
+                <button class="btn" type="button" data-open-services>Weitere Leistungen</button>
+              `
+            })}
+
+            <div class="container cv-auto">
+              <div class="split">
+                <div class="stack">
+                  <div class="card" data-reveal>
+                    <h2 style="margin-top:0;">Wofür ist das sinnvoll?</h2>
+                    <p>
+                      Die folgenden Punkte beschreiben typische Anwendungsbereiche und Nutzenaspekte.
+                      Ergebnisse werden immer im Zusammenhang mit Ihrer Situation, der Anamnese und der Untersuchung beurteilt.
+                    </p>
+                    ${tplTicks(s.benefits)}
+                  </div>
+
+                  <div class="section" style="padding-top:10px;">
+                    <h2 data-reveal>Details</h2>
+                    <div data-reveal>
+                      ${tplAccordions(s.items)}
+                    </div>
+                  </div>
+
+                  ${extra}
+
+                  <div class="section">
+                    ${tplCallout({
+                      title: practice.appointmentNote,
+                      body: "Bitte rufen Sie zur Terminvereinbarung an. Bei Fragen zu Unterlagen oder Vorbefunden geben wir Ihnen gerne Orientierung.",
+                      primary: { label: "Termin vereinbaren", href: "/kontakt" },
+                      secondary: { label: "Kontakt öffnen", href: "/kontakt" }
+                    })}
+                  </div>
+                </div>
+
+                <div class="stack">
+                  <div class="hero-media" data-reveal>
+                    <div class="media-card" style="aspect-ratio: 16/11;">
+                      <div class="imgwrap">
+                        <img src="${practice.images.practice}" alt="Praxisbild" loading="lazy" decoding="async" />
+                      </div>
+                      <div class="media-meta">
+                        <div class="glass">
+                          <strong>Verlässliche Diagnostik</strong>
+                          <span>klar erklärt, gemeinsam entschieden</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="section" style="padding:14px 0 0;">
+                      <div class="card" data-reveal>
+                        <h3>Kontakt auf einen Blick</h3>
+                        <p><strong>Adresse:</strong> ${addrLine()}</p>
+                        <p style="margin-top:10px;">
+                          <strong>Tel.:</strong> <a href="${practice.contact.telPrimary.href}">${practice.contact.telPrimary.label}</a><br/>
+                          <strong>Tel.:</strong> <a href="${practice.contact.telSecondary.href}">${practice.contact.telSecondary.label}</a><br/>
+                          <strong>Fax:</strong> ${practice.contact.fax.label}
+                        </p>
+                        <p class="small" style="margin-top:10px;"><strong>${practice.insurance}</strong></p>
+                        <div style="margin-top:12px;">
+                          <a class="btn primary" href="/kontakt" data-link style="width:100%; justify-content:center;">Termin vereinbaren</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="section cv-auto" style="padding-top:0;">
+                    <h2 data-reveal>Ordinationszeiten</h2>
+                    <div data-reveal>${tplHoursTable()}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        `;
+      }
+
+      function renderContact() {
+        const maps = mapsLinks();
+        return `
+          <section class="section">
+            ${tplPageHeader({
+              kicker: "Kontakt",
+              h1: "Kontakt &amp; Anfahrt",
+              lead: `${practice.appointmentNote}. Wir freuen uns auf Ihren Anruf – für Terminvereinbarung und organisatorische Fragen.`,
+              actions: `
+                <a class="btn primary" href="${practice.contact.telPrimary.href}">${icons('phone')} Jetzt anrufen</a>
+                <a class="btn" href="${maps.osm}" target="_blank" rel="noopener noreferrer">${icons('map')} Route planen</a>
+              `
+            })}
+
+            <div class="container cv-auto">
+              <div class="split">
+                <div class="stack">
+                  <div class="card" data-reveal>
+                    <h2 style="margin-top:0;">Adresse</h2>
+                    <p>${addrLine()}</p>
+                    <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+                      <a class="btn" href="${maps.osm}" target="_blank" rel="noopener noreferrer">${icons('map')} OpenStreetMap</a>
+                      <a class="btn" href="${maps.google}" target="_blank" rel="noopener noreferrer">Google Maps</a>
+                    </div>
+                  </div>
+
+                  <div class="card" data-reveal>
+                    <h2 style="margin-top:0;">Telefon &amp; Fax</h2>
+                    <p>
+                      <strong>Tel.:</strong> <a href="${practice.contact.telPrimary.href}">${practice.contact.telPrimary.label}</a><br/>
+                      <strong>Tel.:</strong> <a href="${practice.contact.telSecondary.href}">${practice.contact.telSecondary.label}</a><br/>
+                      <strong>Fax:</strong> ${practice.contact.fax.label}
+                    </p>
+                    <div class="hr"></div>
+                    <p class="small"><strong>${practice.insurance}</strong></p>
+                    <p class="small" style="margin-top:6px;"><strong>${practice.appointmentNote}</strong></p>
+                    <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+                      <a class="btn primary" href="${practice.contact.telPrimary.href}">${icons('phone')} Jetzt anrufen</a>
+                      <button class="btn" type="button" data-open-services>Leistungen</button>
+                    </div>
+                  </div>
+
+                  ${tplCallout({
+                    title: "Gut vorbereitet",
+                    body: "Wenn vorhanden: bitte Vorbefunde und eine aktuelle Medikamentenliste mitbringen. So können wir das Gespräch effizient und individuell führen.",
+                    primary: { label: "Termin vereinbaren", href: "/kontakt" }
+                  })}
+                </div>
+
+                <div class="stack">
+                  <div class="section" style="padding-top:0;">
+                    <h2 data-reveal>Ordinationszeiten</h2>
+                    <div data-reveal>${tplHoursTable()}</div>
+                  </div>
+
+                  <div class="card" data-reveal>
+                    <h3>Hinweis</h3>
+                    <p>
+                      ${practice.appointmentNote}. Für akute Beschwerden außerhalb der Ordinationszeiten wenden Sie sich bitte an den ärztlichen Bereitschaftsdienst oder die nächstgelegene Versorgungseinrichtung.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        `;
+      }
+
+      function renderImpressum() {
+        return `
+          <section class="section">
+            ${tplPageHeader({
+              kicker: "Impressum",
+              h1: "Impressum",
+              lead: "Pflichtangaben gemäß geltendem Recht. Diese Informationen wurden bewusst kompakt und gut lesbar aufbereitet.",
+              actions: `<a class="btn primary" href="/kontakt" data-link>${icons('phone')} Kontakt</a>`
+            })}
+
+            <div class="container cv-auto">
+              <div class="grid cols3">
+                <div class="card" data-reveal>
+                  <h3>Anbieterin</h3>
+                  <p><strong>${practice.name}</strong></p>
+                  <p>${addrLine()}</p>
+                  <p style="margin-top:10px;">
+                    <strong>Tel.:</strong> <a href="${practice.contact.telPrimary.href}">${practice.contact.telPrimary.label}</a><br/>
+                    <strong>Tel.:</strong> <a href="${practice.contact.telSecondary.href}">${practice.contact.telSecondary.label}</a><br/>
+                    <strong>Fax:</strong> ${practice.contact.fax.label}
+                  </p>
+                </div>
+
+                <div class="card" data-reveal>
+                  <h3>Rechtsform</h3>
+                  <p>Freiberuflich</p>
+                  <div class="hr"></div>
+                  <h3>Geschäftsführung / Verantwortlich</h3>
+                  <p>${practice.physician}</p>
+                </div>
+
+                <div class="card" data-reveal>
+                  <h3>Unternehmensgegenstand</h3>
+                  <p>Fachärztin für Innere Medizin</p>
+                  <div class="hr"></div>
+                  <h3>Kammer &amp; Aufsicht</h3>
+                  <p>Ärztekammer Kärnten</p>
+                </div>
+              </div>
+
+              <div class="section cv-auto">
+                <h2 data-reveal>Inhalte &amp; Haftung</h2>
+                <div class="card" data-reveal>
+                  <p>
+                    Inhalte dieser Website dienen der allgemeinen Information über die Ordination und ersetzen keine persönliche Beratung oder Untersuchung.
+                    Trotz sorgfältiger Erstellung kann keine Gewähr für Aktualität, Vollständigkeit und Richtigkeit übernommen werden.
+                    Externe Links werden zum Zeitpunkt der Verlinkung geprüft; für deren Inhalte sind die jeweiligen Anbieter verantwortlich.
+                  </p>
+                </div>
+              </div>
+
+              <div class="section cv-auto">
+                <h2 data-reveal>Bildrechte</h2>
+                <div class="card" data-reveal>
+                  <p>
+                    Teile des Bildmaterials basieren auf lizenzierten Stock-Fotos (u. a. Adobe Stock) sowie auf bereitgestellten Praxisbildern.
+                    Urheber- und Nutzungsrechte liegen bei den jeweiligen Rechteinhaber:innen.
+                  </p>
+                  <p class="small" style="margin-top:10px;">
+                    Hinweis: Verweise auf veraltete Plattformen wurden bewusst neutral zusammengefasst; die Ordination nutzt Online-Kanäle ausschließlich zur Information und Kontaktaufnahme.
+                  </p>
+                </div>
+              </div>
+
+              <div class="section">
+                ${tplCallout({
+                  title: "Fragen?",
+                  body: "Für organisatorische Rückfragen oder Terminvereinbarungen erreichen Sie uns telefonisch während der Ordinationszeiten.",
+                  primary: { label: "Kontakt", href: "/kontakt" }
+                })}
+              </div>
+            </div>
+          </section>
+        `;
+      }
+
+      function renderDatenschutz() {
+        return `
+          <section class="section">
+            ${tplPageHeader({
+              kicker: "Datenschutz",
+              h1: "Datenschutzerklärung",
+              lead: "Diese Seite stellt eine strukturierte Vorlage dar. Der vollständige, final geprüfte Rechtstext wird hier bereitgestellt bzw. ist von Ihrer Rechtsberatung einzupflegen.",
+              actions: `<a class="btn primary" href="/kontakt" data-link>${icons('phone')} Kontakt</a>`
+            })}
+
+            <div class="container cv-auto">
+              <div class="callout" data-reveal>
+                <div class="row">
+                  <div>
+                    <strong>Wichtiger Hinweis</strong>
+                    <p>
+                      Diese Datenschutzerklärung ist als Platzhalter-Struktur gedacht und stellt keine rechtliche Beratung dar.
+                      Bitte ersetzen/ergänzen Sie die Inhalte durch einen rechtlich geprüften Text, der Ihre tatsächlichen Datenverarbeitungen abbildet.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="section cv-auto">
+                <h2 data-reveal>1. Verantwortliche Stelle</h2>
+                <div class="card" data-reveal>
+                  <p><strong>${practice.name}</strong><br/>${addrLine()}</p>
+                  <p style="margin-top:10px;">
+                    Tel. <a href="${practice.contact.telPrimary.href}">${practice.contact.telPrimary.label}</a> ·
+                    Tel. <a href="${practice.contact.telSecondary.href}">${practice.contact.telSecondary.label}</a> ·
+                    Fax ${practice.contact.fax.label}
+                  </p>
+                </div>
+              </div>
+
+              <div class="section cv-auto">
+                <h2 data-reveal>2. Zwecke und Rechtsgrundlagen</h2>
+                <div class="card" data-reveal>
+                  <p>
+                    <em>Platzhalter:</em> Beschreiben Sie, welche personenbezogenen Daten wofür verarbeitet werden (z. B. Kontaktanfragen, Terminorganisation, Website-Betrieb),
+                    und nennen Sie die jeweiligen Rechtsgrundlagen (z. B. Vertragserfüllung, berechtigtes Interesse, Einwilligung, gesetzliche Pflichten).
+                  </p>
+                </div>
+              </div>
+
+              <div class="section cv-auto">
+                <h2 data-reveal>3. Server-Logfiles &amp; Website-Betrieb</h2>
+                <div class="card" data-reveal>
+                  <p>
+                    <em>Platzhalter:</em> Üblicherweise fallen beim Hosting technische Daten (z. B. IP-Adresse, Zeitstempel, aufgerufene Seiten, User-Agent) an.
+                    Erläutern Sie Speicherdauer, Zweck (Sicherheit/Fehleranalyse) und Hosting-Dienstleister.
+                  </p>
+                </div>
+              </div>
+
+              <div class="section cv-auto">
+                <h2 data-reveal>4. Cookies / Einwilligungen</h2>
+                <div class="card" data-reveal>
+                  <p>
+                    <em>Platzhalter:</em> Führen Sie auf, ob Cookies/Tracking eingesetzt werden. Falls Consent-Management verwendet wird, erklären Sie Funktionsweise, Anbieter und Widerrufsmöglichkeiten.
+                  </p>
+                </div>
+              </div>
+
+              <div class="section cv-auto">
+                <h2 data-reveal>5. Kontaktaufnahme</h2>
+                <div class="card" data-reveal>
+                  <p>
+                    <em>Platzhalter:</em> Beschreiben Sie, wie Anfragen (z. B. telefonisch, per E-Mail, Formular) verarbeitet werden, welche Daten betroffen sind und wie lange diese gespeichert werden.
+                  </p>
+                </div>
+              </div>
+
+              <div class="section cv-auto">
+                <h2 data-reveal>6. Ihre Rechte</h2>
+                <div class="card" data-reveal>
+                  <p>
+                    <em>Platzhalter:</em> Informieren Sie über Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerspruch sowie Widerruf von Einwilligungen.
+                    Ergänzen Sie die zuständige Aufsichtsbehörde und Beschwerdemöglichkeit.
+                  </p>
+                </div>
+              </div>
+
+              <div class="section">
+                ${tplCallout({
+                  title: "Datenschutz-Fragen?",
+                  body: "Wenn Sie Fragen zur Datenverarbeitung haben, kontaktieren Sie uns bitte. (Hinweis: Der finale Rechtstext ist hier einzupflegen.)",
+                  primary: { label: "Kontakt", href: "/kontakt" }
+                })}
+              </div>
+            </div>
+          </section>
+        `;
+      }
+
+      function renderNotFound() {
+        return `
+          <section class="section">
+            ${tplPageHeader({
+              kicker: "404",
+              h1: "Seite nicht gefunden",
+              lead: "Die aufgerufene Adresse existiert hier nicht (mehr). Nutzen Sie die Navigation oder springen Sie zurück zur Startseite.",
+              actions: `
+                <a class="btn primary" href="/" data-link>Zur Startseite</a>
+                <a class="btn" href="/kontakt" data-link>Kontakt</a>
+              `
+            })}
+            <div class="container cv-auto">
+              <div class="card" data-reveal>
+                <h3>Tipps</h3>
+                <p>Prüfen Sie die URL oder wählen Sie eine der häufigen Seiten:</p>
+                <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+                  <a class="btn" href="/leistungen" data-link>Leistungen</a>
+                  <a class="btn" href="/leistungen/vorsorgeuntersuchung" data-link>Vorsorge</a>
+                  <a class="btn" href="/kontakt" data-link>Kontakt</a>
+                </div>
+              </div>
+            </div>
+          </section>
+        `;
+      }
+
+      /* ==========================================================================
+         Router + Meta (History API on http(s), hash-routing fallback on file://)
+         ========================================================================== */
+      const redirects = {
+        "/datenschutzerklarung-old-api": "/datenschutzerklarung",
+        "/datenschutzerklarung-cm": "/datenschutzerklarung"
+      };
+
+      let routerMode = (() => {
+        try {
+          return (location.protocol === 'http:' || location.protocol === 'https:') ? 'history' : 'hash';
+        } catch {
+          return 'hash';
+        }
+      })();
+
+      function getPathFromLocation() {
+        if (routerMode === 'hash') {
+          const h = location.hash || '#/';
+          const p = h.replace(/^#/, '');
+          return normalizePath(p || '/');
+        }
+        let p = normalizePath(location.pathname || '/');
+        if (p === '/index.html' || p.endsWith('/index.html')) p = '/';
+        return p;
+      }
+
+      function resolveRedirect(path) {
+        const p = normalizePath(path);
+        if (redirects[p]) return { path: redirects[p], redirected: true };
+        return { path: p, redirected: false };
+      }
+
+      function setUrl(path, { replace = false } = {}) {
+        const p = normalizePath(path);
+
+        if (routerMode === 'history') {
+          try {
+            replace ? history.replaceState({}, '', p) : history.pushState({}, '', p);
+            return;
+          } catch (err) {
+            routerMode = 'hash';
+          }
+        }
+
+        // Hash fallback: keep pathname intact for local file preview.
+        const base = location.pathname + location.search;
+        const url = base + '#' + p;
+        replace ? history.replaceState({}, '', url) : history.pushState({}, '', url);
+      }
+
+      const routeTable = new Map([
+        ["/", {
+          meta: {
+            title: "Ordination Dr. Ruth Lechner – Innere Medizin & Geriatrie in Feldkirchen",
+            description: "Internistische Facharztordination mit Zusatzfach Geriatrie in Feldkirchen (Kärnten). Alle Kassen und Privat. Termine nur nach telefonischer Vereinbarung."
+          },
+          render: renderHome
+        }],
+        ["/leistungen", {
+          meta: {
+            title: "Leistungen – Ordination Dr. Ruth Lechner (Feldkirchen)",
+            description: "Übersicht der Leistungen: Ultraschall, EKG, Vorsorgeuntersuchung und OP‑Tauglichkeit – verständlich erklärt."
+          },
+          render: renderServicesHub
+        }],
+        ["/kontakt", {
+          meta: {
+            title: "Kontakt & Öffnungszeiten – Ordination Dr. Ruth Lechner",
+            description: "Adresse, Ordinationszeiten sowie Telefonnummern und Fax. Termine nur nach telefonischer Vereinbarung. Alle Kassen und Privat."
+          },
+          render: renderContact
+        }],
+        ["/impressum", {
+          meta: {
+            title: "Impressum – Ordination Dr. Ruth Lechner",
+            description: "Pflichtangaben, Anbieterinformationen, Kammer & Aufsicht sowie Bildrechte."
+          },
+          render: renderImpressum
+        }],
+        ["/datenschutzerklarung", {
+          meta: {
+            title: "Datenschutzerklärung – Ordination Dr. Ruth Lechner",
+            description: "Strukturierte Datenschutzerklärung-Seite (Platzhalter). Finaler Rechtstext ist einzupflegen."
+          },
+          render: renderDatenschutz
+        }]
+      ]);
+      services.forEach(s => routeTable.set(s.path, { meta: s.seo, render: () => renderServiceDetail(s.id) }));
+
+      function setMeta(meta, path) {
+        const title = meta?.title || practice.name;
+        const desc  = meta?.description || "";
+        document.title = title;
+
+        const m = document.querySelector('meta[name="description"]');
+        if (m) m.setAttribute('content', desc);
+
+        const ogt = document.querySelector('meta[property="og:title"]');
+        const ogd = document.querySelector('meta[property="og:description"]');
+        if (ogt) ogt.setAttribute('content', title);
+        if (ogd) ogd.setAttribute('content', desc);
+
+        const c = document.getElementById('canonical');
+        const origin = (location.origin && location.origin !== 'null') ? location.origin : '';
+        const href = origin ? (origin + path) : path;
+        if (c) c.setAttribute('href', href);
+
+        const announcer = document.getElementById('route-announcer');
+        if (announcer) announcer.textContent = title;
+      }
+
+      async function transitionSwap(html) {
+        const view = document.getElementById('view');
+        if (!view) return;
+        if (prefersReducedMotion()) {
+          view.innerHTML = html;
+          return;
+        }
+        try {
+          await view.animate(
+            [
+              { opacity: 1, filter: 'blur(0px)', transform: 'translateY(0px)' },
+              { opacity: 0, filter: 'blur(6px)', transform: 'translateY(10px)' }
+            ],
+            { duration: 170, easing: 'cubic-bezier(.2,.9,.1,1)' }
+          ).finished;
+        } catch {}
+        view.innerHTML = html;
+        try {
+          await view.animate(
+            [
+              { opacity: 0, filter: 'blur(8px)', transform: 'translateY(-6px)' },
+              { opacity: 1, filter: 'blur(0px)', transform: 'translateY(0px)' }
+            ],
+            { duration: 240, easing: 'cubic-bezier(.2,.9,.1,1)' }
+          ).finished;
+        } catch {}
+      }
+
+      /* ==========================================================================
+         Sheets (fix: no auto-close timer race)
+         ========================================================================== */
+      let _sheetHideTimer = 0;
+
+      function clearTempTabFocus() {
+        const tabbar = document.getElementById('tabbar');
+        if (!tabbar) return;
+        tabbar.querySelectorAll('[data-temp="true"]').forEach(el => el.removeAttribute('data-temp'));
+      }
+
+      function setTempTabFocus(key) {
+        const tabbar = document.getElementById('tabbar');
+        if (!tabbar) return;
+        clearTempTabFocus();
+        const el = tabbar.querySelector(`[data-nav="${key}"]`);
+        el?.setAttribute('data-temp', 'true');
+        positionIndicator();
+      }
+
+      function closeSheets({ immediate = false } = {}) {
+        if (_sheetHideTimer) { clearTimeout(_sheetHideTimer); _sheetHideTimer = 0; }
+
+        const backdrop = document.getElementById('sheet-backdrop');
+        const sheets = [document.getElementById('sheet-services'), document.getElementById('sheet-more')].filter(Boolean);
+
+        sheets.forEach(s => { s.setAttribute('data-open','false'); });
+        if (backdrop) backdrop.setAttribute('data-open','false');
+
+        // aria-expanded reset
+        document.getElementById('open-services')?.setAttribute('aria-expanded','false');
+        document.getElementById('open-more')?.setAttribute('aria-expanded','false');
+
+        clearTempTabFocus();
+        positionIndicator();
+
+        const reduce = prefersReducedMotion();
+        const done = () => {
+          sheets.forEach(s => { s.hidden = true; });
+          if (backdrop) backdrop.hidden = true;
+          releaseFocusTrap();
+        };
+
+        if (reduce || immediate) done();
+        else _sheetHideTimer = window.setTimeout(done, 260);
+      }
+
+      function openSheet(which) {
+        const backdrop = document.getElementById('sheet-backdrop');
+        const s = document.getElementById(which === 'services' ? 'sheet-services' : 'sheet-more');
+        if (!backdrop || !s) return;
+
+        // Close any existing sheet immediately (no timeout race)
+        closeSheets({ immediate: true });
+        setIslandExpanded(false, { immediate: true });
+
+        // Highlight pressed tab while sheet is open
+        setTempTabFocus(which === 'services' ? 'services' : 'more');
+
+        // Unhide then animate in
+        backdrop.hidden = false;
+        s.hidden = false;
+
+        requestAnimationFrame(() => {
+          backdrop.setAttribute('data-open','true');
+          s.setAttribute('data-open','true');
+          if (which === 'services') document.getElementById('open-services')?.setAttribute('aria-expanded','true');
+          if (which === 'more') document.getElementById('open-more')?.setAttribute('aria-expanded','true');
+          trapFocus(s);
+          s.querySelector('[data-sheet-close]')?.focus();
+        });
+      }
+
+      function isSheetOpen(id) {
+        const el = document.getElementById(id);
+        return !!el && el.getAttribute('data-open') === 'true' && !el.hidden;
+      }
+
+      let _trap = null;
+      function trapFocus(container) {
+        releaseFocusTrap();
+        const focusables = () => Array.from(container.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])'))
+          .filter(el => !el.disabled && el.offsetParent !== null);
+        const handler = (e) => {
+          if (e.key !== 'Tab') return;
+          const list = focusables();
+          if (!list.length) return;
+          const first = list[0];
+          const last = list[list.length - 1];
+          if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+          else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+        };
+        _trap = { container, handler };
+        document.addEventListener('keydown', handler);
+      }
+      function releaseFocusTrap() {
+        if (!_trap) return;
+        document.removeEventListener('keydown', _trap.handler);
+        _trap = null;
+      }
+
+      function setupReveals(root = document) {
+        const nodes = $$('[data-reveal]', root);
+        if (prefersReducedMotion()) {
+          nodes.forEach(n => n.classList.add('is-visible'));
+          return;
+        }
+        const io = new IntersectionObserver((entries) => {
+          for (const e of entries) {
+            if (e.isIntersecting) {
+              e.target.classList.add('is-visible');
+              io.unobserve(e.target);
+            }
+          }
+        }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+        nodes.forEach(n => io.observe(n));
+      }
+
+      function setupAccordions(root = document) {
+        // Native <details> handles most UX; keep JS minimal for performance.
+        // No-op except for future extension.
+        void root;
+      }
+
+      function buildSheets() {
+        const grid = document.getElementById('services-sheet-grid');
+        const more = document.getElementById('more-sheet-grid');
+        if (grid) {
+          grid.innerHTML = services.map(s => `
+            <div class="sheet-card">
+              <a href="${s.path}" data-link aria-label="${s.title} öffnen">
+                <div>
+                  <strong>${s.title}</strong>
+                  <span class="meta">${s.short}</span>
+                </div>
+                <span class="go" aria-hidden="true">${icons('arrow')}</span>
+              </a>
+            </div>
+          `).join('');
+        }
+        if (more) {
+          more.innerHTML = `
+            <div class="sheet-card">
+              <a href="/impressum" data-link>
+                <div><strong>Impressum</strong><span class="meta">Pflichtangaben &amp; Bildrechte</span></div>
+                <span class="go" aria-hidden="true">${icons('arrow')}</span>
+              </a>
+            </div>
+            <div class="sheet-card">
+              <a href="/datenschutzerklarung" data-link>
+                <div><strong>Datenschutzerklärung</strong><span class="meta">Strukturierte Vorlage (finaler Text einzupflegen)</span></div>
+                <span class="go" aria-hidden="true">${icons('arrow')}</span>
+              </a>
+            </div>
+            <div class="sheet-card">
+              <a href="/datenschutzerklarung-old-api" data-link>
+                <div><strong>Datenschutzerklärung (old api)</strong><span class="meta">Weiterleitung zur aktuellen Datenschutzerklärung</span></div>
+                <span class="go" aria-hidden="true">${icons('arrow')}</span>
+              </a>
+            </div>
+            <div class="sheet-card">
+              <a href="/datenschutzerklarung-cm" data-link>
+                <div><strong>Datenschutzerklärung (cm)</strong><span class="meta">Weiterleitung zur aktuellen Datenschutzerklärung</span></div>
+                <span class="go" aria-hidden="true">${icons('arrow')}</span>
+              </a>
+            </div>
+          `;
+        }
+      }
+
+      /* ==========================================================================
+         Tab bar indicator (fluid spring with velocity-based stretch)
+         ========================================================================== */
+      function applyIndicator(x, w, vx = 0) {
+        const ind = document.getElementById('tabIndicator');
+        if (!ind) return;
+        const v = Math.min(1, Math.abs(vx) / 18);
+        const dir = vx === 0 ? 0 : (vx > 0 ? 1 : -1);
+
+        ind.style.setProperty('--iv', v.toFixed(3));
+        ind.style.setProperty('--idir', String(dir));
+
+        // Slight stretch & skew in direction of travel (liquid feel)
+        const sx = 1 + v * 0.06;
+        const skew = dir * v * -6;
+
+        ind.style.transform = `translate3d(${x}px,0,0) scaleX(${sx}) skewX(${skew}deg)`;
+        ind.style.width = `${w}px`;
+      }
+
+      const spring = (() => {
+        const state = { x: 0, w: 120, vx: 0, vw: 0, tx: 0, tw: 120, raf: 0 };
+        const stiffness = 0.16;
+        const damping = 0.78;
+
+        function step() {
+          const dx = state.tx - state.x;
+          const dw = state.tw - state.w;
+
+          state.vx = (state.vx + dx * stiffness) * damping;
+          state.vw = (state.vw + dw * stiffness) * damping;
+
+          state.x += state.vx;
+          state.w += state.vw;
+
+          applyIndicator(state.x, state.w, state.vx);
+
+          const done = Math.abs(dx) < 0.2 && Math.abs(dw) < 0.2 && Math.abs(state.vx) < 0.2 && Math.abs(state.vw) < 0.2;
+          if (!done) state.raf = requestAnimationFrame(step);
+          else state.raf = 0;
+        }
+
+        function to(x, w) {
+          state.tx = x; state.tw = w;
+          if (prefersReducedMotion()) {
+            state.x = x; state.w = w;
+            state.vx = 0; state.vw = 0;
+            applyIndicator(x, w, 0);
+            return;
+          }
+          if (!state.raf) state.raf = requestAnimationFrame(step);
+        }
+
+        return { to };
+      })();
+
+      function navKeyForPath(path) {
+        if (path === '/') return 'home';
+        if (path.startsWith('/leistungen')) return 'services';
+        if (path.startsWith('/kontakt')) return 'kontakt';
+        if (path.startsWith('/impressum')) return 'impressum';
+        if (path.startsWith('/datenschutzerklarung')) return 'datenschutz';
+        return 'home';
+      }
+
+      function updateTabActive(path) {
+        const key = navKeyForPath(path);
+        const tabbar = document.getElementById('tabbar');
+        if (!tabbar) return;
+        const tabs = $$('[data-nav]', tabbar);
+        tabs.forEach(t => t.setAttribute('data-active', t.getAttribute('data-nav') === key ? 'true' : 'false'));
+        positionIndicator();
+      }
+
+      function positionIndicator() {
+        const tabbar = document.getElementById('tabbar');
+        const ind = document.getElementById('tabIndicator');
+        if (!tabbar || !ind) return;
+
+        const temp = tabbar.querySelector('[data-temp="true"]');
+        const active = temp || tabbar.querySelector('[data-active="true"]') || tabbar.querySelector('[data-nav="home"]');
+        if (!active) return;
+
+        const rBar = tabbar.getBoundingClientRect();
+        const rAct = active.getBoundingClientRect();
+
+        // If active is hidden (desktop-only), fallback
+        if (rAct.width < 2 || rAct.height < 2) {
+          const fallback = tabbar.querySelector('[data-nav="services"]') || tabbar.querySelector('[data-nav="home"]');
+          if (!fallback) return;
+          const rf = fallback.getBoundingClientRect();
+          spring.to((rf.left - rBar.left), rf.width);
+          return;
+        }
+
+        spring.to((rAct.left - rBar.left), rAct.width);
+      }
+
+      /* ==========================================================================
+         Render
+         ========================================================================== */
+      async function renderPath(path) {
+        const p = normalizePath(path);
+        const route = routeTable.get(p);
+        const meta = route?.meta || { title: `Seite nicht gefunden – ${practice.name}`, description: "Die angeforderte Seite wurde nicht gefunden." };
+
+        setMeta(meta, p);
+
+        // Close overlays on navigation
+        closeSheets({ immediate: true });
+
+        const html = route ? route.render() : renderNotFound();
+        await transitionSwap(html);
+
+        const view = document.getElementById('view');
+        $$('img', view).forEach(setLoaded);
+        setupReveals(view);
+        setupAccordions(view);
+
+        // Wire "open services" convenience buttons inside pages
+        $$('[data-open-services]', view).forEach(btn => {
+          btn.addEventListener('click', () => {
+            openSheet('services');
+          });
+        });
+
+        // Focus & scroll
+        document.getElementById('main')?.focus({ preventScroll: true });
+        safeScrollTop();
+
+        updateTabActive(p);
+        updateSmartIsland(p);
+      }
+
+      async function renderCurrent({ replace = true } = {}) {
+        const raw = getPathFromLocation();
+        const { path, redirected } = resolveRedirect(raw);
+        if (redirected) setUrl(path, { replace: true });
+        if (replace) setUrl(path, { replace: true });
+        await renderPath(path);
+      }
+
+      async function navigate(to, { replace = false } = {}) {
+        const { path, redirected } = resolveRedirect(to);
+        setUrl(path, { replace: replace || redirected });
+        await renderPath(path);
+      }
+
+      function setupLinkInterceptor() {
+        document.addEventListener('click', (e) => {
+          const a = e.target && e.target.closest ? e.target.closest('a') : null;
+          if (!a) return;
+
+          const href = a.getAttribute('href') || '';
+          if (!href) return;
+
+          // Allow external/new tab/mailto/tel/anchors
+          if (a.target === '_blank' || a.hasAttribute('download')) return;
+          if (href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('#')) return;
+
+          if (href.startsWith('/')) {
+            e.preventDefault();
+            const next = normalizePath(href);
+            const cur = resolveRedirect(getPathFromLocation()).path;
+            if (next === cur) return;
+            navigate(next);
+          }
+        });
+
+        window.addEventListener('popstate', () => {
+          renderCurrent({ replace: true });
+        });
+
+        // If user manually edits hash in hash-mode, keep SPA consistent.
+        window.addEventListener('hashchange', () => {
+          if (routerMode === 'hash') renderCurrent({ replace: true });
+        });
+      }
+
+      /* ==========================================================================
+         Global UI (header state, sheets, back-to-top, footer, tabbar compact)
+         ========================================================================== */
+      function setupHeaderScrolled() {
+        const header = document.querySelector('[data-header]');
+        let ticking = false;
+        const onScroll = () => {
+          if (ticking) return;
+          ticking = true;
+          requestAnimationFrame(() => {
+            const scrolled = window.scrollY > 6;
+            header?.setAttribute('data-scrolled', scrolled ? 'true' : 'false');
+            ticking = false;
+          });
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+      }
+
+      
+
+      /* ================================================
+         Smart Island (Mobile) – Dynamic-Island-artiger Schnellzugriff
+         - Verdichtet Header/Infobar in ein hilfreiches, platzsparendes UI
+         - Zeigt Öffnungsstatus (live), Kontext (Route) und Quick Actions
+         - Animiert per FLIP (reduced-motion respektiert)
+         ================================================ */
+      const island = {
+        wrap: null, el: null, backdrop: null,
+        bar: null, toggle: null, closeBtn: null,
+        title: null, sub: null, dot: null,
+        practiceName: null, context: null, statusChip: null,
+        chips: null, actions: null, mini: null,
+        toast: null, toastText: null,
+        expanded: false,
+        compact: false,
+        lastPath: '/',
+        toastTimer: null,
+        statusTimer: null,
+        lastScrollY: 0
+      };
+
+      const islandSvgs = {
+        phone: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 20.1 20.1 0 0 1-8.8-3.1 19.7 19.7 0 0 1-6-6A20.1 20.1 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .6 3a2 2 0 0 1-.4 2.1L8.2 10a16 16 0 0 0 6 6l1.2-1.1a2 2 0 0 1 2.1-.4c1 .3 2 .5 3 .6A2 2 0 0 1 22 16.9Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+        calendar: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 2v3M16 2v3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M3.5 9h17" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M6 5h12a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>`,
+        map: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 22s7-4.4 7-11a7 7 0 1 0-14 0c0 6.6 7 11 7 11Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 11.5a2.2 2.2 0 1 0 0-4.4 2.2 2.2 0 0 0 0 4.4Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+        list: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M4.5 6h.01M4.5 12h.01M4.5 18h.01" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/></svg>`,
+        copy: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 9h10v10H9z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>`
+      };
+
+      const idxByShort = { Mo:1, Di:2, Mi:3, Do:4, Fr:5, Sa:6, So:0 };
+      const shortByIdx = ['So','Mo','Di','Mi','Do','Fr','Sa'];
+
+      const openingMap = new Map();
+      (practice.openingHours || []).forEach(h => {
+        const idx = idxByShort[h.dayShort];
+        if (idx !== undefined) openingMap.set(idx, h);
+      });
+
+      function parseHM(hm) {
+        const [h, m] = (hm || '0:0').split(':').map(n => parseInt(n, 10));
+        return (isFinite(h) ? h : 0) * 60 + (isFinite(m) ? m : 0);
+      }
+
+      function getOpenInfo(now = new Date()) {
+        const dow = now.getDay();
+        const mins = now.getHours() * 60 + now.getMinutes();
+        const today = openingMap.get(dow) || null;
+
+        const todayLabel = today ? `${today.opens}–${today.closes}` : 'geschlossen';
+        let isOpen = false;
+
+        if (today) {
+          const o = parseHM(today.opens);
+          const c = parseHM(today.closes);
+          isOpen = mins >= o && mins < c;
+        }
+
+        let nextLabel = '';
+        if (isOpen && today) {
+          nextLabel = `bis ${today.closes}`;
+        } else {
+          for (let add = 0; add < 14; add++) {
+            const d = (dow + add) % 7;
+            const spec = openingMap.get(d);
+            if (!spec) continue;
+
+            if (add === 0 && today) {
+              const o = parseHM(today.opens);
+              if (mins < o) {
+                nextLabel = `öffnet heute ${today.opens}`;
+                break;
+              }
+              // else: nach Dienstschluss -> nächster Tag
+            } else if (add > 0) {
+              nextLabel = `öffnet ${shortByIdx[d]} ${spec.opens}`;
+              break;
+            }
+          }
+        }
+
+        const sub = isOpen ? `Geöffnet ${nextLabel}` : (nextLabel ? `Geschlossen · ${nextLabel}` : 'Geschlossen');
+
+        return {
+          isOpen,
+          todayLabel,
+          sub: sub.replace('öffnet', 'Öffnet'),
+          chip: isOpen ? `Geöffnet · ${today?.closes ? `bis ${today.closes}` : ''}`.trim() : (nextLabel ? `Geschlossen · ${nextLabel}`.replace('öffnet', 'Öffnet') : 'Geschlossen')
+        };
+      }
+
+      function islandRouteLabel(path) {
+        const p = normalizePath(path || '/');
+        if (p.startsWith('/leistungen/')) {
+          const slug = p.split('/')[2] || '';
+          const svc = services.find(s => s.slug === slug);
+          if (svc) return svc.title;
+        }
+        const map = {
+          '/': 'Home',
+          '/leistungen': 'Leistungen',
+          '/kontakt': 'Kontakt',
+          '/impressum': 'Impressum',
+          '/datenschutzerklarung': 'Datenschutz'
+        };
+        return map[p] || (p.startsWith('/leistungen') ? 'Leistungen' : 'Seite');
+      }
+
+      function addrLine() {
+        return `${practice.address.street}, ${practice.address.postalCode} ${practice.address.city}, ${practice.address.country}`;
+      }
+
+      async function copyToClipboard(text) {
+        const t = String(text || '').trim();
+        if (!t) return false;
+
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(t);
+            return true;
+          }
+        } catch {}
+
+        // Fallback (best effort)
+        try {
+          const ta = document.createElement('textarea');
+          ta.value = t;
+          ta.setAttribute('readonly', '');
+          ta.style.position = 'fixed';
+          ta.style.left = '-9999px';
+          ta.style.top = '0';
+          document.body.appendChild(ta);
+          ta.focus();
+          ta.select();
+          const ok = document.execCommand('copy');
+          document.body.removeChild(ta);
+          return !!ok;
+        } catch {}
+        return false;
+      }
+
+      function showIslandToast(msg) {
+        if (!island.toast || !island.toastText) return;
+        island.toastText.textContent = msg;
+        island.toast.hidden = false;
+
+        if (!prefersReducedMotion() && island.el) {
+          island.el.animate(
+            [
+              { transform: 'translateZ(0) scale(1)' },
+              { transform: 'translateZ(0) scale(1.02)' },
+              { transform: 'translateZ(0) scale(1)' }
+            ],
+            { duration: 260, easing: 'cubic-bezier(.2,.8,.2,1)' }
+          );
+        }
+
+        clearTimeout(island.toastTimer);
+        island.toastTimer = setTimeout(() => {
+          if (island.toast) island.toast.hidden = true;
+        }, 1400);
+      }
+
+      function islandFLIP(changeFn, { duration = 420 } = {}) {
+        if (!island.el || prefersReducedMotion()) {
+          changeFn();
+          return;
+        }
+        const first = island.el.getBoundingClientRect();
+        changeFn();
+        const last = island.el.getBoundingClientRect();
+
+        const dx = first.left - last.left;
+        const dy = first.top - last.top;
+        const sx = first.width / last.width;
+        const sy = first.height / last.height;
+
+        island.el.animate(
+          [
+            { transform: `translate(${dx}px, ${dy}px) scale(${sx}, ${sy})` },
+            { transform: 'translate(0, 0) scale(1, 1)' }
+          ],
+          { duration, easing: 'cubic-bezier(.2,.8,.2,1)' }
+        );
+      }
+
+      function setIslandExpanded(expanded, { immediate = false } = {}) {
+        if (!island.el || !island.panel || !island.backdrop) return;
+
+        if (expanded === island.expanded) return;
+        island.expanded = expanded;
+
+        const apply = () => {
+          island.el.dataset.state = expanded ? 'expanded' : 'collapsed';
+          island.el.style.width = expanded ? 'min(720px, calc(100% - 1.2rem))' : (island.compact ? 'min(300px, calc(100% - 1.2rem))' : 'min(440px, calc(100% - 1.2rem))');
+
+          island.panel.hidden = !expanded;
+          island.backdrop.hidden = !expanded;
+          island.backdrop.dataset.open = expanded ? 'true' : 'false';
+          if (island.closeBtn) island.closeBtn.style.display = expanded ? '' : '';
+          if (island.toggle) island.toggle.setAttribute('aria-expanded', String(expanded));
+        };
+
+        if (immediate) apply();
+        else islandFLIP(apply, { duration: 460 });
+
+        if (!expanded) {
+          // Keep compact state (if any) after collapsing
+          setIslandCompact(island.compact);
+        } else {
+          // Expanded: never compact
+          setIslandCompact(false);
+        }
+      }
+
+      function setIslandCompact(compact) {
+        if (!island.el) return;
+        island.compact = !!compact;
+        island.el.dataset.compact = compact ? 'true' : 'false';
+        if (!island.expanded) {
+          island.el.style.width = compact ? 'min(300px, calc(100% - 1.2rem))' : 'min(440px, calc(100% - 1.2rem))';
+        }
+      }
+
+      function updateSmartIsland(path) {
+        island.lastPath = normalizePath(path || island.lastPath || '/');
+
+        if (!island.title || !island.sub || !island.dot) return;
+
+        const label = islandRouteLabel(island.lastPath);
+        const open = getOpenInfo();
+
+        island.title.textContent = label;
+        island.sub.textContent = open.sub;
+        island.dot.dataset.open = open.isOpen ? 'true' : 'false';
+
+        if (island.practiceName) island.practiceName.textContent = practice.name;
+        if (island.context) island.context.textContent = label;
+        if (island.statusChip) island.statusChip.textContent = open.chip;
+
+        if (island.call) {
+          island.call.href = practice.contact.telPrimary.href;
+          island.call.setAttribute('aria-label', `Jetzt anrufen: ${practice.contact.telPrimary.label}`);
+        }
+
+        if (island.chips) {
+          island.chips.innerHTML = [
+            `<span class="island-chip">${practice.insurance}</span>`,
+            `<span class="island-chip">${practice.appointmentNote}</span>`
+          ].join('');
+        }
+
+        if (island.actions) {
+          const maps = mapsLinks();
+
+          island.actions.innerHTML = `
+            <a class="island-action primary" href="${practice.contact.telPrimary.href}">
+              ${islandSvgs.phone}
+              <span class="txt">Jetzt anrufen<small>${practice.contact.telPrimary.label}</small></span>
+            </a>
+            <a class="island-action" href="/kontakt" data-link>
+              ${islandSvgs.calendar}
+              <span class="txt">Termin vereinbaren<small>nur telefonisch</small></span>
+            </a>
+            <button class="island-action" type="button" data-island="services">
+              ${islandSvgs.list}
+              <span class="txt">Leistungen<small>Übersicht öffnen</small></span>
+            </button>
+            <a class="island-action" href="${maps.osm}" target="_blank" rel="noopener">
+              ${islandSvgs.map}
+              <span class="txt">Route planen<small>OpenStreetMap</small></span>
+            </a>
+          `;
+        }
+
+        if (island.mini) {
+          const addr = addrLine();
+          island.mini.innerHTML = `
+            <div class="row">
+              <span><strong>Heute:</strong> ${open.todayLabel}${open.isOpen ? ' · geöffnet' : ''}</span>
+              <button class="mini-btn" type="button" data-copy="${open.todayLabel}">${islandSvgs.copy}<span class="sr-only">Öffnungszeiten kopieren</span></button>
+            </div>
+            <div class="row">
+              <span>${addr}</span>
+              <button class="mini-btn" type="button" data-copy="${addr}">${islandSvgs.copy}<span class="sr-only">Adresse kopieren</span></button>
+            </div>
+            <div class="row">
+              <span>Tel.: ${practice.contact.telPrimary.label}</span>
+              <button class="mini-btn" type="button" data-copy="${practice.contact.telPrimary.label}">${islandSvgs.copy}<span class="sr-only">Telefonnummer kopieren</span></button>
+            </div>
+            <div class="row">
+              <span>Fax: ${practice.contact.fax.label}</span>
+              <button class="mini-btn" type="button" data-copy="${practice.contact.fax.label}">${islandSvgs.copy}<span class="sr-only">Faxnummer kopieren</span></button>
+            </div>
+          `;
+        }
+      }
+
+      function setupSmartIsland() {
+        island.wrap = document.getElementById('islandWrap');
+        island.el = document.getElementById('smartIsland');
+        island.backdrop = document.getElementById('islandBackdrop');
+        island.bar = document.getElementById('islandBar');
+        island.toggle = document.getElementById('islandToggle');
+        island.closeBtn = document.getElementById('islandClose');
+        island.title = document.getElementById('islandTitle');
+        island.sub = document.getElementById('islandSub');
+        island.dot = document.getElementById('islandDot');
+        island.call = document.getElementById('islandCall');
+
+        island.panel = document.getElementById('islandPanel');
+        island.practiceName = document.getElementById('islandPracticeName');
+        island.context = document.getElementById('islandContext');
+        island.statusChip = document.getElementById('islandStatusChip');
+        island.chips = document.getElementById('islandChips');
+        island.actions = document.getElementById('islandActions');
+        island.mini = document.getElementById('islandMiniInfo');
+        island.toast = document.getElementById('islandToast');
+        island.toastText = document.getElementById('islandToastText');
+
+        if (!island.el || !island.toggle || !island.panel || !island.backdrop) return;
+
+        island.toggle.addEventListener('click', () => setIslandExpanded(!island.expanded));
+        island.closeBtn?.addEventListener('click', () => setIslandExpanded(false));
+        island.backdrop.addEventListener('click', () => setIslandExpanded(false));
+
+        // Quick: open services sheet (no full navigation)
+        document.getElementById('islandQuickServices')?.addEventListener('click', () => {
+          setIslandExpanded(false, { immediate: true });
+          openSheet('services');
+        });
+
+        // Delegation: island buttons
+        island.el.addEventListener('click', async (e) => {
+          const t = e.target;
+
+          const action = t.closest && t.closest('[data-island="services"]');
+          if (action) {
+            e.preventDefault();
+            setIslandExpanded(false, { immediate: true });
+            openSheet('services');
+            return;
+          }
+
+          const copyBtn = t.closest && t.closest('[data-copy]');
+          if (copyBtn) {
+            e.preventDefault();
+            const ok = await copyToClipboard(copyBtn.getAttribute('data-copy') || '');
+            showIslandToast(ok ? 'Kopiert.' : 'Kopieren nicht verfügbar.');
+            return;
+          }
+        });
+
+        // ESC closes (desktop + keyboards)
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && island.expanded) setIslandExpanded(false);
+        });
+
+        // Scroll-based compacting: small when reading, expands when user scrolls up
+        island.lastScrollY = window.scrollY || 0;
+        window.addEventListener('scroll', () => {
+          if (island.expanded) return;
+
+          const y = window.scrollY || 0;
+          const dy = y - island.lastScrollY;
+          island.lastScrollY = y;
+
+          if (y < 40) return setIslandCompact(false);
+
+          if (dy > 8) setIslandCompact(true);
+          else if (dy < -10) setIslandCompact(false);
+        }, { passive: true });
+
+        // Refresh status every minute (opening hours)
+        clearInterval(island.statusTimer);
+        island.statusTimer = setInterval(() => updateSmartIsland(island.lastPath), 60 * 1000);
+
+        updateSmartIsland(getPathFromLocation());
+      }
+
+
+      function setupSheetsUI() {
+        const backdrop = document.getElementById('sheet-backdrop');
+        const openServices = document.getElementById('open-services');
+        const openMore = document.getElementById('open-more');
+
+        openServices?.addEventListener('click', () => {
+          const open = isSheetOpen('sheet-services');
+          open ? closeSheets() : openSheet('services');
+        });
+        openMore?.addEventListener('click', () => {
+          const open = isSheetOpen('sheet-more');
+          open ? closeSheets() : openSheet('more');
+        });
+
+        backdrop?.addEventListener('click', () => closeSheets());
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeSheets(); });
+
+        $$('[data-sheet-close]').forEach(btn => btn.addEventListener('click', () => closeSheets()));
+      }
+
+      function setupBackToTop() {
+        const wrap = document.getElementById('toTop');
+        const btn = document.getElementById('toTopBtn');
+        if (!wrap || !btn) return;
+
+        const update = () => wrap.setAttribute('data-show', window.scrollY > 700 ? 'true' : 'false');
+        window.addEventListener('scroll', update, { passive: true });
+        update();
+
+        btn.addEventListener('click', () => safeScrollTop());
+      }
+
+      function setupFooter() {
+        document.getElementById('year').textContent = String(new Date().getFullYear());
+        const grid = document.getElementById('footer-grid');
+        if (!grid) return;
+
+        const maps = mapsLinks();
+        grid.innerHTML = `
+          <div class="footcard">
+            <h3>${practice.name}</h3>
+            <p>${practice.positioning}</p>
+            <div class="footrow" style="margin-top:12px;">
+              <span class="pill">${practice.insurance}</span>
+              <span class="pill">${practice.appointmentNote}</span>
+            </div>
+          </div>
+
+          <div class="footcard">
+            <h3>Kontakt</h3>
+            <p>
+              ${addrLine()}<br/>
+              Tel. <a href="${practice.contact.telPrimary.href}">${practice.contact.telPrimary.label}</a><br/>
+              Tel. <a href="${practice.contact.telSecondary.href}">${practice.contact.telSecondary.label}</a><br/>
+              Fax ${practice.contact.fax.label}
+            </p>
+            <div class="footrow">
+              <a href="/kontakt" data-link>Kontaktseite</a>
+              <a href="${maps.osm}" target="_blank" rel="noopener noreferrer">Route planen</a>
+            </div>
+          </div>
+
+          <div class="footcard">
+            <h3>Öffnungszeiten</h3>
+            <p>
+              ${practice.openingHours.map(h => `<strong>${h.dayShort}</strong> ${h.opens}–${h.closes}`).join('<br/>')}
+            </p>
+            <div class="footrow">
+              <a href="/leistungen" data-link>Leistungen</a>
+              <a href="/datenschutzerklarung" data-link>Datenschutz</a>
+              <a href="/impressum" data-link>Impressum</a>
+            </div>
+          </div>
+        `;
+
+        // Keep info bar consistent with data model
+        const ibTel = document.getElementById('infobar-tel');
+        if (ibTel) {
+          ibTel.href = practice.contact.telPrimary.href;
+          const span = ibTel.querySelector('span');
+          if (span) span.textContent = practice.contact.telPrimary.label;
+        }
+      }
+
+      function setupPointerHighlights() {
+        const reduce = prefersReducedMotion();
+        if (reduce) return;
+
+        let raf = 0;
+        let lastX = 0.6, lastY = 0.2;
+
+        const setVars = () => {
+          raf = 0;
+          document.documentElement.style.setProperty('--px', String(lastX));
+          document.documentElement.style.setProperty('--py', String(lastY));
+        };
+
+        const onMove = (e) => {
+          const x = (e.clientX / window.innerWidth);
+          const y = (e.clientY / window.innerHeight);
+          lastX = lastX + (x - lastX) * 0.22;
+          lastY = lastY + (y - lastY) * 0.22;
+          if (!raf) raf = requestAnimationFrame(setVars);
+        };
+
+        window.addEventListener('pointermove', onMove, { passive: true });
+
+        window.addEventListener('scroll', () => {
+          const y = Math.min(1, Math.max(0, (window.scrollY / (window.innerHeight * 1.8))));
+          lastY = lastY + (0.18 + y * 0.35 - lastY) * 0.08;
+          if (!raf) raf = requestAnimationFrame(setVars);
+        }, { passive: true });
+      }
+
+      function setupTabbarCompact() {
+        const wrap = document.getElementById('tabbarWrap');
+        if (!wrap) return;
+
+        if (prefersReducedMotion()) return;
+
+        let lastY = window.scrollY || 0;
+        let compact = false;
+
+        const setCompact = (v) => {
+          compact = v;
+          wrap.setAttribute('data-compact', compact ? 'true' : 'false');
+          positionIndicator();
+        };
+
+        const onScroll = () => {
+          const y = window.scrollY || 0;
+          const dy = y - lastY;
+          lastY = y;
+
+          // near top => expanded
+          if (y < 80) { if (compact) setCompact(false); return; }
+
+          // scrolling down => compact
+          if (dy > 10 && y > 160) { if (!compact) setCompact(true); return; }
+
+          // scrolling up => expand
+          if (dy < -10) { if (compact) setCompact(false); return; }
+        };
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+      }
+
+      function disableSvgAnimIfReduced() {
+        if (!prefersReducedMotion()) return;
+        document.querySelectorAll('svg animate').forEach(a => a.remove());
+      }
+
+      /* ==========================================================================
+         Boot
+         ========================================================================== */
+      function init() {
+        disableSvgAnimIfReduced();
+        buildSheets();
+        setupHeaderScrolled();
+        setupSheetsUI();
+        setupSmartIsland();
+        setupBackToTop();
+        setupFooter();
+        setupLinkInterceptor();
+        setupPointerHighlights();
+        setupTabbarCompact();
+
+        $$('img').forEach(setLoaded);
+
+        // Initial render (supports local file preview)
+        renderCurrent({ replace: true });
+
+        // Keep schema URL aligned (best effort)
+        try {
+          const schemaEl = document.getElementById('schema-jsonld');
+          if (schemaEl) {
+            const json = JSON.parse(schemaEl.textContent);
+            const origin = (location.origin && location.origin !== 'null') ? location.origin : '';
+            json.url = origin ? (origin + '/') : '/';
+            schemaEl.textContent = JSON.stringify(json, null, 2);
+          }
+        } catch {}
+
+        window.addEventListener('resize', () => positionIndicator(), { passive: true });
+        setTimeout(() => positionIndicator(), 80);
+      }
+
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+      else init();
+    })();
+  </script>
+</body>
+</html>
