@@ -112,6 +112,8 @@
       --tabH: 72px;
       --tabPad: 10px;
       --tabSafe: calc(var(--tabH) + env(safe-area-inset-bottom) + 22px);
+      --appTopInset: 26px; /* dynamic via JS on mobile */
+      --appBottomInset: var(--tabSafe); /* dynamic via JS */
       --tabMax: 920px;
 
       /* Pointer-tracked highlights (0..1 normalized) */
@@ -120,8 +122,8 @@
     }
 
     *{ box-sizing: border-box; }
-    html, body{ height: 100%; }
-    html{ scroll-behavior: smooth; }
+    html, body{ height: 100%; width: 100%; max-width: 100%; overflow-x: hidden; }
+    html{ scroll-behavior: smooth; overflow-x: hidden; overscroll-behavior-x: none; }
     body{
       margin:0;
       background:
@@ -133,7 +135,9 @@
       line-height: 1.55;
       text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased;
-      overflow-x: clip;
+      overflow-x: hidden;
+      overscroll-behavior-x: none;
+      touch-action: pan-y pinch-zoom;
     }
 
     img{ max-width:100%; height:auto; display:block; }
@@ -183,6 +187,7 @@
 
     .liquid{
       position: relative;
+      overflow: hidden;
       overflow: clip;
       border-radius: 22px;
       border: 1px solid transparent;
@@ -426,9 +431,9 @@
        ========================================================================== */
     main{
       min-height: 60vh;
-      padding-bottom: var(--tabSafe); /* keep content clear of floating tab bar */
+      padding-bottom: var(--appBottomInset, var(--tabSafe)); /* app-like safe inset for floating tab bar */
     }
-    .view{ padding: 26px 0 72px; }
+    .view{ padding: var(--appTopInset, 26px) 0 42px; }
 
     .section{ padding: 26px 0; }
     .cv-auto{ content-visibility: auto; contain-intrinsic-size: 1px 860px; }
@@ -661,6 +666,7 @@
       border: 1px solid rgba(13,27,27,.10);
       background: rgba(255,255,255,.86);
       box-shadow: 0 10px 22px rgba(13,27,27,.05);
+      overflow: hidden;
       overflow: clip;
     }
     details.accordion + details.accordion{ margin-top: 10px; }
@@ -775,14 +781,16 @@
     .island-wrap{
       position: fixed;
       top: calc(env(safe-area-inset-top) + 10px);
-      left: 50%;
-      transform: translateX(-50%);
+      left: 0; right: 0;
       z-index: 140;
-      width: min(720px, calc(100% - 1.2rem));
+      display:flex;
+      justify-content: center;
       pointer-events: none;
+      padding: 0 .6rem;
     }
     .smart-island{
       pointer-events: auto;
+      touch-action: manipulation;
       border-radius: 26px;
       width: min(440px, calc(100% - 1.2rem));
       margin: 0 auto;
@@ -859,7 +867,7 @@
     }
 
     .smart-island[data-compact="true"] .island-sub{ display:none; }
-    .smart-island[data-compact="true"]{ width: min(300px, calc(100% - 1.2rem)); }
+    .smart-island[data-compact="true"]{ width: min(440px, calc(100% - 1.2rem)); }
 
     .island-icon{
       width: 44px; height: 44px;
@@ -1053,7 +1061,7 @@
     @media (max-width: 859px){
       .island-wrap, .island-backdrop{ display:block; }
       .infobar, header.site-header{ display:none; }
-      .view{ padding-top: calc(env(safe-area-inset-top) + 76px); }
+      :root{ --appTopInset: calc(env(safe-area-inset-top) + 82px); }
 
       /* Hero media becomes a compact composition (less vertical scroll) */
       .media-stack{
@@ -1087,12 +1095,14 @@
       left: 0; right: 0;
       bottom: calc(env(safe-area-inset-bottom) + 12px);
       z-index: 120;
+      display:flex;
+      justify-content:center;
       pointer-events: none; /* only bar itself is interactive */
-      transition: transform var(--med) var(--ease), opacity var(--med) var(--ease);
+      padding: 0 .6rem;
+      /* keep stable (no scroll-compact wobble) */
+      transition: opacity var(--med) var(--ease);
     }
-    .tabbar-wrap[data-compact="true"]{
-      transform: translateY(8px) scale(.94);
-    }
+    .tabbar-wrap[data-compact="true"]{ transform: none; }
     nav.tabbar{
       pointer-events: auto;
       width: min(var(--tabMax), calc(100% - 1.2rem));
@@ -1103,6 +1113,7 @@
       align-items:center;
       gap: 6px;
       padding: var(--tabPad);
+      touch-action: manipulation;
     }
     nav.tabbar{ position: relative; }
 
@@ -1135,7 +1146,7 @@
       flex: 1 1 0;
       overflow:hidden;
     }
-    .tab .tlabel{ display:inline; transition: opacity var(--med) var(--ease), transform var(--med) var(--ease); }
+    .tab .tlabel{ display:inline; white-space: nowrap; overflow:hidden; text-overflow: ellipsis; transition: opacity var(--med) var(--ease), transform var(--med) var(--ease); }
     .tab .ticon{ width: 18px; height: 18px; }
     .tab:hover{ background: rgba(255,255,255,.22); border-color: rgba(255,255,255,.22); transform: translateY(-1px); }
     .tab:active{ transform: translateY(0); }
@@ -1175,6 +1186,7 @@
       pointer-events:none;
       transform: translate3d(0,0,0);
       will-change: transform, width;
+      overflow: hidden;
       overflow: clip;
       filter: url(#lg-goo-soft);
     }
@@ -3283,12 +3295,9 @@
       }
 
       function setIslandCompact(compact) {
-        if (!island.el) return;
-        island.compact = !!compact;
-        island.el.dataset.compact = compact ? 'true' : 'false';
-        if (!island.expanded) {
-          island.el.style.width = compact ? 'min(300px, calc(100% - 1.2rem))' : 'min(440px, calc(100% - 1.2rem))';
-        }
+        // App-like UX: keep the Smart Island fixed (no auto-compact on scroll).
+        // (Still expands/collapses on user tap.)
+        return;
       }
 
       function updateSmartIsland(path) {
@@ -3536,8 +3545,12 @@
         const reduce = prefersReducedMotion();
         if (reduce) return;
 
+        const mm = (q) => (window.matchMedia ? window.matchMedia(q).matches : false);
+        const isTouch = mm('(hover: none)') || mm('(pointer: coarse)') || (navigator.maxTouchPoints && navigator.maxTouchPoints > 0);
+
+        // Stable defaults (prevent "smearing" on touch devices)
         let raf = 0;
-        let lastX = 0.6, lastY = 0.2;
+        let lastX = 0.58, lastY = 0.22;
 
         const setVars = () => {
           raf = 0;
@@ -3545,21 +3558,27 @@
           document.documentElement.style.setProperty('--py', String(lastY));
         };
 
-        const onMove = (e) => {
-          const x = (e.clientX / window.innerWidth);
-          const y = (e.clientY / window.innerHeight);
-          lastX = lastX + (x - lastX) * 0.22;
-          lastY = lastY + (y - lastY) * 0.22;
-          if (!raf) raf = requestAnimationFrame(setVars);
-        };
+        setVars();
 
-        window.addEventListener('pointermove', onMove, { passive: true });
+        // Pointer-driven highlights only on hover-capable devices (desktop)
+        if (!isTouch) {
+          const onMove = (e) => {
+            const x = (e.clientX / window.innerWidth);
+            const y = (e.clientY / window.innerHeight);
+            lastX = lastX + (x - lastX) * 0.22;
+            lastY = lastY + (y - lastY) * 0.22;
+            if (!raf) raf = requestAnimationFrame(setVars);
+          };
 
-        window.addEventListener('scroll', () => {
-          const y = Math.min(1, Math.max(0, (window.scrollY / (window.innerHeight * 1.8))));
-          lastY = lastY + (0.18 + y * 0.35 - lastY) * 0.08;
-          if (!raf) raf = requestAnimationFrame(setVars);
-        }, { passive: true });
+          window.addEventListener('pointermove', onMove, { passive: true });
+
+          // Subtle drift with scroll (desktop only)
+          window.addEventListener('scroll', () => {
+            const y = Math.min(1, Math.max(0, (window.scrollY / (window.innerHeight * 1.8))));
+            lastY = lastY + (0.18 + y * 0.35 - lastY) * 0.08;
+            if (!raf) raf = requestAnimationFrame(setVars);
+          }, { passive: true });
+        }
       }
 
       function setupTabbarCompact() {
@@ -3601,7 +3620,36 @@
         document.querySelectorAll('svg animate').forEach(a => a.remove());
       }
 
-      /* ==========================================================================
+      
+      function updateAppInsets() {
+        const root = document.documentElement;
+
+        // Top inset: only needed when Smart Island is visible (mobile).
+        let top = 26;
+        const islandWrap = document.getElementById('islandWrap');
+        const islandBar = document.getElementById('islandBar');
+        if (islandWrap && islandBar) {
+          const disp = getComputedStyle(islandWrap).display;
+          if (disp !== 'none') {
+            const r = islandBar.getBoundingClientRect();
+            // r.bottom already includes safe-area offset via CSS top
+            top = Math.max(26, Math.ceil(r.bottom + 12));
+          }
+        }
+
+        // Bottom inset: keep content above the floating tab bar across devices.
+        let bottom = 92;
+        const tabbar = document.getElementById('tabbar');
+        if (tabbar) {
+          const r = tabbar.getBoundingClientRect();
+          bottom = Math.max(72, Math.ceil(window.innerHeight - r.top + 12));
+        }
+
+        root.style.setProperty('--appTopInset', top + 'px');
+        root.style.setProperty('--appBottomInset', bottom + 'px');
+      }
+
+/* ==========================================================================
          Boot
          ========================================================================== */
       function init() {
@@ -3614,7 +3662,9 @@
         setupFooter();
         setupLinkInterceptor();
         setupPointerHighlights();
-        setupTabbarCompact();
+        updateAppInsets();
+        if (window.visualViewport) { window.visualViewport.addEventListener('resize', updateAppInsets, { passive: true }); }
+        // setupTabbarCompact(); // disabled (keep tab bar fixed)
 
         $$('img').forEach(setLoaded);
 
@@ -3632,7 +3682,7 @@
           }
         } catch {}
 
-        window.addEventListener('resize', () => positionIndicator(), { passive: true });
+        window.addEventListener('resize', () => { positionIndicator(); updateAppInsets(); }, { passive: true });
         setTimeout(() => positionIndicator(), 80);
       }
 
