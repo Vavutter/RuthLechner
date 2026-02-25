@@ -59,6 +59,8 @@
       --motion-snap: cubic-bezier(0.2, 0.8, 0.2, 1);
       --lift-shadow: 0 24px 54px rgba(4, 27, 24, 0.2);
       --glow-shadow: 0 8px 28px rgba(16, 185, 129, 0.28);
+      --mobile-nav-height: 4.25rem;
+      --mobile-cta-height: 4.1rem;
     }
 
     /* Lenis base styles */
@@ -434,6 +436,338 @@
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
     }
 
+    .mobile-cta-bar,
+    .section-map-mobile {
+      display: none;
+    }
+
+    @media (max-width: 767px) {
+      html {
+        scroll-padding-top: calc(var(--mobile-nav-height) + 14px);
+      }
+
+      body {
+        padding-bottom: calc(var(--mobile-cta-height) + env(safe-area-inset-bottom) + 14px);
+      }
+
+      .nav-shell {
+        height: var(--mobile-nav-height);
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .nav-brand {
+        font-size: 1rem;
+        gap: 0.55rem;
+      }
+
+      .nav-brand-logo {
+        width: 2.05rem;
+        height: 2.05rem;
+        font-size: 0.66rem;
+      }
+
+      .nav-brand-wordmark {
+        max-width: 11rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .nav-toggle {
+        padding: 0.5rem;
+      }
+
+      #mobile-menu {
+        padding: calc(1.3rem + env(safe-area-inset-top)) 1.3rem calc(2rem + env(safe-area-inset-bottom));
+        align-items: stretch;
+        justify-content: flex-start;
+        text-align: left;
+        gap: 0.35rem;
+      }
+
+      #mobile-menu [data-menu-item] {
+        font-size: 1.9rem;
+        line-height: 1.06;
+        padding: 0.35rem 0;
+      }
+
+      #mobile-menu .mobile-menu-call {
+        margin-top: 1rem;
+        width: 100%;
+        justify-content: center;
+      }
+
+      .hero-aura {
+        animation: none;
+        opacity: 0.45;
+      }
+
+      .hero-image {
+        animation: none;
+        transform: scale(1.04);
+      }
+
+      .hero-section {
+        min-height: auto;
+        padding-top: calc(var(--mobile-nav-height) + 1.5rem);
+      }
+
+      .hero-content {
+        align-items: flex-start;
+        text-align: left;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-bottom: 2.8rem;
+      }
+
+      .hero-badge {
+        margin-bottom: 1.15rem;
+        padding: 0.42rem 0.72rem;
+      }
+
+      .hero-title {
+        font-size: clamp(2.45rem, 13vw, 3.55rem);
+        line-height: 0.93;
+        margin-bottom: 1.1rem;
+      }
+
+      .hero-subtitle {
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 1.35rem;
+        font-size: clamp(1.04rem, 5.1vw, 1.28rem);
+        line-height: 1.42;
+        color: rgba(255, 255, 255, 0.76);
+      }
+
+      .hero-actions {
+        width: 100%;
+        gap: 0.85rem;
+        align-items: stretch;
+      }
+
+      .hero-actions > a {
+        width: 100%;
+        justify-content: space-between;
+        padding: 1rem 1.15rem;
+        font-size: 1rem;
+      }
+
+      .hero-billing {
+        width: 100%;
+        padding: 0.85rem 1rem;
+        border-radius: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        background: rgba(5, 46, 42, 0.4);
+      }
+
+      .hero-scroll-cue {
+        display: none;
+      }
+
+      .marquee-shell {
+        padding-top: 0.52rem;
+        padding-bottom: 0.52rem;
+      }
+
+      .marquee-shell .animate-marquee {
+        animation-duration: 24s !important;
+        letter-spacing: 0.14em;
+      }
+
+      .reveal {
+        filter: none;
+        clip-path: none;
+        transform: translate3d(0, 22px, 0) scale(1);
+      }
+
+      .reveal.active {
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+
+      .section-approach,
+      .section-services,
+      .section-contact {
+        padding-top: 4.75rem;
+        padding-bottom: 4.75rem;
+      }
+
+      .section-approach .grid,
+      .section-contact .contact-layout {
+        gap: 2.1rem;
+      }
+
+      .section-approach h2,
+      .section-services h2,
+      .section-contact h2 {
+        font-size: clamp(2.02rem, 10.5vw, 2.85rem);
+        line-height: 1.02;
+      }
+
+      .section-stats {
+        padding-top: 3.35rem;
+        padding-bottom: 3.35rem;
+      }
+
+      .section-stats .grid {
+        gap: 0.85rem;
+      }
+
+      .section-stats .grid > div {
+        background: #f8faf9;
+        border: 1px solid rgba(19, 78, 74, 0.08);
+        border-radius: 1rem;
+        padding: 1rem 0.6rem;
+      }
+
+      .section-stats .metric-value {
+        font-size: clamp(2rem, 10.8vw, 2.85rem);
+        margin-bottom: 0.45rem;
+      }
+
+      .section-stats .metric-label {
+        letter-spacing: 0.12em;
+        font-size: 0.63rem;
+      }
+
+      .section-services .services-stack {
+        gap: 0.95rem;
+      }
+
+      .feature-card,
+      .feature-subcard,
+      .hours-card {
+        border-radius: 1.3rem !important;
+        padding: 1.2rem !important;
+      }
+
+      .feature-card h3 {
+        font-size: clamp(1.7rem, 8.2vw, 2.3rem);
+        margin-bottom: 0.65rem;
+      }
+
+      .feature-card p {
+        font-size: 1rem !important;
+        margin-bottom: 1.15rem !important;
+      }
+
+      .feature-card ul {
+        gap: 0.75rem;
+      }
+
+      .feature-card ul strong {
+        font-size: 1rem !important;
+      }
+
+      .feature-card .feature-visual {
+        min-height: 11rem;
+      }
+
+      .feature-card svg {
+        width: 5rem;
+        height: 5rem;
+      }
+
+      .mini-feature-grid {
+        gap: 0.95rem;
+      }
+
+      .feature-subcard h3 {
+        font-size: clamp(1.55rem, 7.3vw, 2rem);
+        margin-bottom: 0.65rem;
+      }
+
+      .feature-subcard p {
+        font-size: 0.97rem;
+        margin-bottom: 1rem;
+      }
+
+      .feature-subcard ul {
+        gap: 0.6rem;
+        font-size: 0.95rem;
+      }
+
+      .section-map-mobile {
+        display: block;
+      }
+
+      .section-contact .contact-phone-primary {
+        font-size: clamp(2rem, 11vw, 2.5rem);
+        line-height: 1.02;
+      }
+
+      .section-contact .contact-phone-secondary {
+        font-size: clamp(1.42rem, 8vw, 1.85rem);
+        line-height: 1.05;
+      }
+
+      .section-contact .schedule-row {
+        padding-bottom: 0.88rem;
+      }
+
+      .section-contact .schedule-row span:last-child {
+        font-size: 0.94rem;
+      }
+
+      .section-contact .hours-card h3 {
+        margin-bottom: 1.35rem;
+      }
+
+      .mobile-cta-bar {
+        position: fixed;
+        left: 0.75rem;
+        right: 0.75rem;
+        bottom: calc(0.55rem + env(safe-area-inset-bottom));
+        z-index: 70;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.45rem;
+        padding: 0.5rem;
+        border-radius: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: rgba(4, 24, 22, 0.9);
+        backdrop-filter: blur(14px);
+        box-shadow: 0 16px 34px rgba(2, 10, 9, 0.5);
+        transition: transform 300ms var(--motion-spring), opacity 240ms var(--motion-out);
+      }
+
+      .mobile-cta-link {
+        min-height: 2.95rem;
+        border-radius: 0.72rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.07);
+        color: #f0fdfa;
+        font-size: 0.74rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .mobile-cta-link.cta-primary {
+        background: #f0fdfa;
+        color: #052e2a;
+      }
+
+      body.is-overlay-open .mobile-cta-bar {
+        transform: translate3d(0, 120%, 0);
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .footer-shell {
+        padding-bottom: calc(3.4rem + env(safe-area-inset-bottom));
+      }
+
+      .motion-card::after,
+      .motion-card::before,
+      .motion-button::before {
+        display: none;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       html:focus-within { scroll-behavior: auto; }
       *, *::before, *::after {
@@ -461,10 +795,10 @@
 
   <!-- Navigation -->
   <nav class="fixed top-0 inset-x-0 z-50 relative border-b border-white/5 bg-brand-dark/60 backdrop-blur-xl" id="navbar">
-    <div class="max-w-[90rem] mx-auto px-6 h-20 flex items-center justify-between">
-      <a href="#" class="text-xl md:text-2xl font-serif text-white flex items-center gap-3">
-        <div class="w-8 h-8 md:w-10 md:h-10 bg-white text-brand-950 rounded-full flex items-center justify-center text-xs md:text-sm font-bold tracking-tighter">RL</div>
-        Dr. Ruth Lechner
+    <div class="nav-shell max-w-[90rem] mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="#" class="nav-brand text-xl md:text-2xl font-serif text-white flex items-center gap-3">
+        <div class="nav-brand-logo w-8 h-8 md:w-10 md:h-10 bg-white text-brand-950 rounded-full flex items-center justify-center text-xs md:text-sm font-bold tracking-tighter">RL</div>
+        <span class="nav-brand-wordmark">Dr. Ruth Lechner</span>
       </a>
       
       <div class="hidden md:flex gap-8 items-center text-sm font-medium text-white/80">
@@ -474,7 +808,7 @@
         <a href="tel:+436643061010" class="ml-4 bg-white text-brand-950 px-6 py-3 rounded-full hover:bg-brand-50 transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] motion-button">Termin vereinbaren</a>
       </div>
 
-      <button class="md:hidden text-white p-2" onclick="toggleMobileMenu()" aria-label="Menü">
+      <button id="mobile-menu-button" class="nav-toggle md:hidden text-white p-2" onclick="toggleMobileMenu()" aria-label="Menü öffnen" aria-controls="mobile-menu" aria-expanded="false">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
       </button>
     </div>
@@ -482,18 +816,24 @@
   </nav>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="fixed inset-0 z-40 bg-brand-dark/95 backdrop-blur-3xl flex flex-col items-center justify-center gap-8 text-2xl font-serif text-white">
+  <div id="mobile-menu" class="fixed inset-0 z-[60] bg-brand-dark/95 backdrop-blur-3xl flex flex-col items-center justify-center gap-8 text-2xl font-serif text-white" aria-hidden="true">
     <button onclick="toggleMobileMenu()" class="absolute top-6 right-6 p-4 motion-button" data-menu-item>
       <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
     </button>
     <a href="#ansatz" onclick="toggleMobileMenu()" class="hover:text-emerald-400 motion-link" data-menu-item>Unser Ansatz</a>
     <a href="#leistungen" onclick="toggleMobileMenu()" class="hover:text-emerald-400 motion-link" data-menu-item>Leistungen</a>
     <a href="#kontakt" onclick="toggleMobileMenu()" class="hover:text-emerald-400 motion-link" data-menu-item>Kontakt & Anfahrt</a>
-    <a href="tel:+436643061010" onclick="toggleMobileMenu()" class="mt-4 bg-white text-brand-950 px-8 py-4 rounded-full font-sans text-lg font-bold motion-button" data-menu-item>Jetzt anrufen</a>
+    <a href="tel:+436643061010" onclick="toggleMobileMenu()" class="mobile-menu-call mt-4 bg-white text-brand-950 px-8 py-4 rounded-full font-sans text-lg font-bold motion-button" data-menu-item>Jetzt anrufen</a>
+  </div>
+
+  <div class="mobile-cta-bar md:hidden" aria-label="Schnellaktionen">
+    <a href="tel:+436643061010" class="mobile-cta-link cta-primary">Anrufen</a>
+    <a href="https://www.google.com/maps/search/?api=1&query=Dr.+Arthur+Lemisch+Stra%C3%9Fe+9%2F1%2C+9560+Feldkirchen%2C+%C3%96sterreich" target="_blank" rel="noopener" class="mobile-cta-link">Route</a>
+    <a href="#kontakt" class="mobile-cta-link">Zeiten</a>
   </div>
 
   <!-- Hero Section -->
-  <section class="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-brand-dark text-white pt-20">
+  <section class="hero-section relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-brand-dark text-white pt-20">
     <!-- Abstract gradient glow -->
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-800/40 rounded-full blur-[120px] mix-blend-screen pointer-events-none hero-aura"></div>
     <div class="absolute inset-0 bg-noise pointer-events-none"></div>
@@ -502,27 +842,27 @@
        <img src="https://www.inneremedizin-lechner.at/uploads/RGN9jdbZ/768x0_640x0/AdobeStock_562280510-T.jpg" class="w-full h-full object-cover hero-image" alt="Praxis Hintergrund">
     </div>
     
-    <div class="relative z-10 w-full max-w-[90rem] mx-auto px-6 text-center reveal active flex flex-col items-center">
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8">
+    <div class="hero-content relative z-10 w-full max-w-[90rem] mx-auto px-6 text-center reveal active flex flex-col items-center">
+      <div class="hero-badge inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8">
         <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-dot"></span>
         <span class="text-xs font-semibold uppercase tracking-widest text-white/80">Zusatzfach Geriatrie</span>
       </div>
       
-      <h1 class="text-5xl md:text-8xl lg:text-[8rem] font-serif leading-[0.9] tracking-tight mb-8">
+      <h1 class="hero-title text-5xl md:text-8xl lg:text-[8rem] font-serif leading-[0.9] tracking-tight mb-8">
         Innere Medizin.<br>
         <span class="text-emerald-300/80 italic">Neu gedacht.</span>
       </h1>
       
-      <p class="text-xl md:text-3xl font-light text-white/60 max-w-3xl mx-auto mb-12">
+      <p class="hero-subtitle text-xl md:text-3xl font-light text-white/60 max-w-3xl mx-auto mb-12">
         Ihre Gesundheit und Ihr Wohlergehen stehen im Mittelpunkt – mit Zeit für Patient:innen und modernster Diagnostik.
       </p>
       
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-6 w-full sm:w-auto">
+      <div class="hero-actions flex flex-col sm:flex-row items-center justify-center gap-6 w-full sm:w-auto">
         <a href="tel:+436643061010" class="w-full sm:w-auto bg-white text-brand-950 px-10 py-5 rounded-full font-bold text-lg hover:bg-emerald-50 transition-all flex items-center justify-center gap-3 motion-button">
           Termin vereinbaren
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
         </a>
-        <div class="text-left flex flex-col">
+        <div class="hero-billing text-left flex flex-col">
           <span class="text-white/50 text-sm font-medium uppercase tracking-wider">Abrechnung</span>
           <span class="text-white font-serif text-xl">Alle Kassen & Privat</span>
         </div>
@@ -530,7 +870,7 @@
     </div>
     
     <!-- Scroll Indicator -->
-    <div class="absolute bottom-10 left-1/2 text-white/30 scroll-cue">
+    <div class="hero-scroll-cue absolute bottom-10 left-1/2 text-white/30 scroll-cue">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
     </div>
   </section>
@@ -557,7 +897,7 @@
   </div>
 
   <!-- Intro / Approach Section -->
-  <section class="py-24 md:py-40 bg-[#f8faf9] text-brand-dark" id="ansatz">
+  <section class="section-approach py-24 md:py-40 bg-[#f8faf9] text-brand-dark" id="ansatz">
     <div class="max-w-[90rem] mx-auto px-6">
       <div class="grid lg:grid-cols-2 gap-20 items-center">
         <div class="reveal" data-reveal-axis="x">
@@ -600,29 +940,29 @@
   </section>
 
   <!-- Big Numbers Section -->
-  <section class="py-20 bg-white border-y border-gray-100">
+  <section class="section-stats py-20 bg-white border-y border-gray-100">
     <div class="max-w-[90rem] mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center reveal">
        <div>
-          <p class="text-5xl md:text-7xl font-serif text-brand-950 mb-4">Alle</p>
-          <p class="text-xs md:text-sm font-bold text-gray-500 uppercase tracking-[0.2em]">Kassen & Privat</p>
+          <p class="metric-value text-5xl md:text-7xl font-serif text-brand-950 mb-4">Alle</p>
+          <p class="metric-label text-xs md:text-sm font-bold text-gray-500 uppercase tracking-[0.2em]">Kassen & Privat</p>
        </div>
        <div>
-          <p class="text-5xl md:text-7xl font-serif text-brand-950 mb-4" data-count-value="3">3</p>
-          <p class="text-xs md:text-sm font-bold text-gray-500 uppercase tracking-[0.2em]">Spezialdiplome</p>
+          <p class="metric-value text-5xl md:text-7xl font-serif text-brand-950 mb-4" data-count-value="3">3</p>
+          <p class="metric-label text-xs md:text-sm font-bold text-gray-500 uppercase tracking-[0.2em]">Spezialdiplome</p>
        </div>
        <div>
-          <p class="text-5xl md:text-7xl font-serif text-brand-950 mb-4" data-count-value="5">5</p>
-          <p class="text-xs md:text-sm font-bold text-gray-500 uppercase tracking-[0.2em]">Tage geöffnet</p>
+          <p class="metric-value text-5xl md:text-7xl font-serif text-brand-950 mb-4" data-count-value="5">5</p>
+          <p class="metric-label text-xs md:text-sm font-bold text-gray-500 uppercase tracking-[0.2em]">Tage geöffnet</p>
        </div>
        <div>
-          <p class="text-5xl md:text-7xl font-serif text-emerald-800 mb-4"><span data-count-value="100">100</span><span class="text-4xl">%</span></p>
-          <p class="text-xs md:text-sm font-bold text-gray-500 uppercase tracking-[0.2em]">Fokus auf Sie</p>
+          <p class="metric-value text-5xl md:text-7xl font-serif text-emerald-800 mb-4"><span data-count-value="100">100</span><span class="text-4xl">%</span></p>
+          <p class="metric-label text-xs md:text-sm font-bold text-gray-500 uppercase tracking-[0.2em]">Fokus auf Sie</p>
        </div>
     </div>
   </section>
 
   <!-- Services / Features Section -->
-  <section class="py-24 md:py-40 bg-brand-dark text-white relative overflow-hidden" id="leistungen">
+  <section class="section-services py-24 md:py-40 bg-brand-dark text-white relative overflow-hidden" id="leistungen">
     <!-- Background Decor -->
     <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-emerald-900/20 rounded-full blur-[100px] pointer-events-none"></div>
 
@@ -632,9 +972,9 @@
         <p class="text-xl md:text-2xl text-white/60 max-w-3xl font-light">Diagnostik und Vorsorge sind die Grundbausteine einer guten internistischen Betreuung. Wir setzen auf moderne Technologie und verständliche Erklärungen.</p>
       </div>
 
-      <div class="space-y-6 md:space-y-10">
+      <div class="services-stack space-y-6 md:space-y-10">
         <!-- Feature 1 -->
-        <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[2rem] p-8 md:p-16 flex flex-col lg:flex-row gap-12 lg:gap-24 items-center reveal group hover:bg-white/10 transition-colors duration-500 motion-card" data-tilt>
+        <div class="feature-card bg-white/5 backdrop-blur-sm border border-white/10 rounded-[2rem] p-8 md:p-16 flex flex-col lg:flex-row gap-12 lg:gap-24 items-center reveal group hover:bg-white/10 transition-colors duration-500 motion-card" data-tilt>
           <div class="lg:w-1/2">
              <div class="inline-block px-4 py-2 bg-emerald-900/50 rounded-full text-xs font-bold uppercase tracking-widest text-emerald-300 mb-8">Bildgebung</div>
              <h3 class="text-4xl md:text-5xl font-serif mb-6">Ultraschall</h3>
@@ -645,13 +985,13 @@
                <li class="flex items-start gap-4"><div class="mt-1 w-2 h-2 rounded-full bg-emerald-400"></div> <div><strong class="block text-white text-lg">Echokardiographie</strong> <span class="text-white/50">Detaillierte Herzstruktur und -funktion</span></div></li>
              </ul>
           </div>
-          <div class="lg:w-1/2 w-full aspect-square md:aspect-[4/3] rounded-[2rem] bg-gradient-to-br from-white/10 to-transparent border border-white/5 relative overflow-hidden flex items-center justify-center">
+          <div class="feature-visual lg:w-1/2 w-full aspect-square md:aspect-[4/3] rounded-[2rem] bg-gradient-to-br from-white/10 to-transparent border border-white/5 relative overflow-hidden flex items-center justify-center">
              <svg class="w-40 h-40 text-white/10 group-hover:scale-110 transition-transform duration-700 group-hover:text-emerald-400/20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
           </div>
         </div>
 
         <!-- Feature 2 -->
-        <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[2rem] p-8 md:p-16 flex flex-col lg:flex-row-reverse gap-12 lg:gap-24 items-center reveal group hover:bg-white/10 transition-colors duration-500 motion-card" data-tilt>
+        <div class="feature-card bg-white/5 backdrop-blur-sm border border-white/10 rounded-[2rem] p-8 md:p-16 flex flex-col lg:flex-row-reverse gap-12 lg:gap-24 items-center reveal group hover:bg-white/10 transition-colors duration-500 motion-card" data-tilt>
           <div class="lg:w-1/2">
              <div class="inline-block px-4 py-2 bg-emerald-900/50 rounded-full text-xs font-bold uppercase tracking-widest text-emerald-300 mb-8">Herz-Kreislauf</div>
              <h3 class="text-4xl md:text-5xl font-serif mb-6">EKG & Blutdruck</h3>
@@ -662,14 +1002,14 @@
                <li class="flex items-start gap-4"><div class="mt-1 w-2 h-2 rounded-full bg-emerald-400"></div> <div><strong class="block text-white text-lg">24h-Blutdruckmessung</strong> <span class="text-white/50">Tages- und Nachtprofil-Erstellung</span></div></li>
              </ul>
           </div>
-          <div class="lg:w-1/2 w-full aspect-square md:aspect-[4/3] rounded-[2rem] bg-gradient-to-bl from-white/10 to-transparent border border-white/5 relative overflow-hidden flex items-center justify-center">
+          <div class="feature-visual lg:w-1/2 w-full aspect-square md:aspect-[4/3] rounded-[2rem] bg-gradient-to-bl from-white/10 to-transparent border border-white/5 relative overflow-hidden flex items-center justify-center">
              <svg class="w-40 h-40 text-white/10 group-hover:scale-110 transition-transform duration-700 group-hover:text-emerald-400/20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
           </div>
         </div>
 
         <!-- Mini Grid for 3 & 4 -->
-        <div class="grid lg:grid-cols-2 gap-6 md:gap-10">
-            <div class="bg-white text-brand-950 rounded-[2rem] p-8 md:p-16 reveal group motion-card" data-tilt>
+        <div class="mini-feature-grid grid lg:grid-cols-2 gap-6 md:gap-10">
+            <div class="feature-subcard bg-white text-brand-950 rounded-[2rem] p-8 md:p-16 reveal group motion-card" data-tilt>
                <div class="inline-block px-4 py-2 border border-brand-900/20 rounded-full text-xs font-bold uppercase tracking-widest text-brand-900 mb-8">Gesundheit</div>
                <h3 class="text-3xl md:text-4xl font-serif mb-6">Vorsorgeuntersuchung</h3>
                <p class="text-lg text-brand-900/70 mb-10">Individuelle Planung statt Standardprogramm. (Einmal jährlich kostenlos möglich für Versicherte ab 18). Wir besprechen Risikofaktoren und erstellen einen Plan.</p>
@@ -679,7 +1019,7 @@
                  <li class="flex items-center gap-4"><span class="text-emerald-600/50 text-xl font-serif">3</span> Befundbesprechung & Plan</li>
                </ul>
             </div>
-            <div class="bg-emerald-800 text-white rounded-[2rem] p-8 md:p-16 reveal group motion-card" data-tilt>
+            <div class="feature-subcard bg-emerald-800 text-white rounded-[2rem] p-8 md:p-16 reveal group motion-card" data-tilt>
                <div class="inline-block px-4 py-2 bg-white/10 border border-white/20 rounded-full text-xs font-bold uppercase tracking-widest text-white mb-8">Sicherheit</div>
                <h3 class="text-3xl md:text-4xl font-serif mb-6">OP‑Tauglichkeit</h3>
                <p class="text-lg text-white/70 mb-10">Strukturierte Voruntersuchung zur Risikominimierung mit schriftlichem Befund für Operateur:in und Anästhesie.</p>
@@ -694,8 +1034,27 @@
     </div>
   </section>
 
+  <section class="section-map-mobile md:hidden bg-[#021714] text-white py-14">
+    <div class="max-w-[90rem] mx-auto px-6">
+      <div class="rounded-[1.4rem] border border-white/10 bg-white/[0.04] backdrop-blur-sm p-6 space-y-5">
+        <p class="text-xs font-bold uppercase tracking-[0.22em] text-emerald-300/90">Anfahrt</p>
+        <h2 class="text-3xl font-serif leading-[1.05]">Schnell zur Ordination.</h2>
+        <p class="text-white/75 text-sm leading-relaxed">Dr. Arthur Lemisch Straße 9/1, 9560 Feldkirchen. Die Route ist mit einem Tipp in Google Maps geöffnet.</p>
+        <div class="flex flex-col gap-3">
+          <a href="https://www.google.com/maps/search/?api=1&query=Dr.+Arthur+Lemisch+Stra%C3%9Fe+9%2F1%2C+9560+Feldkirchen%2C+%C3%96sterreich" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-3 bg-white text-brand-950 px-4 py-3 rounded-full font-semibold motion-button">
+            Route starten
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+          <a href="tel:+436643061010" class="inline-flex items-center justify-center gap-3 border border-white/20 text-white px-4 py-3 rounded-full font-semibold motion-button">
+            Termin telefonisch vereinbaren
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- 3D Map Scroll Section -->
-  <section class="bg-[#021714] text-white" id="anfahrt-3d">
+  <section class="hidden md:block bg-[#021714] text-white" id="anfahrt-3d">
     <div data-map-scroll-section class="relative h-[220vh]">
       <div class="sticky top-0 h-screen overflow-hidden">
         <div id="google-map-3d" class="absolute inset-0" aria-label="3D Karte der Ordination in Feldkirchen"></div>
@@ -725,10 +1084,10 @@
   </section>
 
   <!-- Location / Action Section -->
-  <section class="py-24 md:py-40 bg-[#f8faf9]" id="kontakt">
+  <section class="section-contact py-24 md:py-40 bg-[#f8faf9]" id="kontakt">
     <div class="max-w-[90rem] mx-auto px-6 reveal">
       
-      <div class="flex flex-col lg:flex-row gap-16 lg:gap-32">
+      <div class="contact-layout flex flex-col lg:flex-row gap-16 lg:gap-32">
         <div class="lg:w-1/2">
           <h2 class="text-5xl md:text-7xl font-serif text-brand-dark mb-8 leading-tight">Ihre Ordination <br>in Feldkirchen.</h2>
           <p class="text-xl md:text-2xl text-brand-900/60 font-light mb-12">Bitte kontaktieren Sie uns telefonisch für einen Termin. Wir sorgen dafür, dass für Ihr Anliegen ausreichend Zeit eingeplant wird.</p>
@@ -736,8 +1095,8 @@
           <div class="space-y-8">
             <div class="contact-block">
               <p class="text-sm font-bold uppercase tracking-widest text-emerald-800 mb-4">Telefon</p>
-              <a href="tel:+436643061010" class="inline-block text-4xl md:text-5xl font-serif text-brand-950 hover:text-emerald-600 transition mb-2 motion-link">+43 664 306 10 10</a>
-              <a href="tel:+4342767225" class="inline-block text-2xl font-serif text-brand-900/60 hover:text-emerald-600 transition motion-link">+43 4276 7225</a>
+              <a href="tel:+436643061010" class="contact-phone-primary inline-block text-4xl md:text-5xl font-serif text-brand-950 hover:text-emerald-600 transition mb-2 motion-link">+43 664 306 10 10</a>
+              <a href="tel:+4342767225" class="contact-phone-secondary inline-block text-2xl font-serif text-brand-900/60 hover:text-emerald-600 transition motion-link">+43 4276 7225</a>
             </div>
             
             <div class="pt-8 border-t border-brand-900/10 contact-block">
@@ -756,7 +1115,7 @@
         </div>
 
         <div class="lg:w-1/2">
-          <div class="bg-white p-10 md:p-16 rounded-[2rem] shadow-[0_20px_60px_rgba(13,75,69,0.05)] border border-brand-900/5 motion-card" data-tilt>
+          <div class="hours-card bg-white p-10 md:p-16 rounded-[2rem] shadow-[0_20px_60px_rgba(13,75,69,0.05)] border border-brand-900/5 motion-card" data-tilt>
              <h3 class="text-3xl font-serif text-brand-950 mb-10">Öffnungszeiten</h3>
              
              <ul class="space-y-6 text-lg">
@@ -841,10 +1200,12 @@
       reducedMotion: false,
       preloadObserver: null,
       labelText: '',
-      labelSwapTimer: 0
+      labelSwapTimer: 0,
+      experienceInitialized: false
     };
 
     const MOTION_PREFERS_REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const MOBILE_VIEWPORT = window.matchMedia('(max-width: 767px)');
     const modalState = {
       closeTimer: 0
     };
@@ -852,7 +1213,7 @@
 
     document.addEventListener("DOMContentLoaded", () => {
       // Initialize Lenis for butter-smooth scrolling
-      if (!MOTION_PREFERS_REDUCED.matches && typeof Lenis !== 'undefined') {
+      if (!MOTION_PREFERS_REDUCED.matches && !MOBILE_VIEWPORT.matches && typeof Lenis !== 'undefined') {
         lenis = new Lenis({
           duration: 1.4,
           easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -868,26 +1229,9 @@
           requestAnimationFrame(raf);
         };
         requestAnimationFrame(raf);
-
-        // Smooth scroll for anchors
-        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-          anchor.addEventListener('click', function onAnchorClick(event) {
-            const targetId = this.getAttribute('href');
-            if (!targetId || targetId === '#') {
-              return;
-            }
-
-            const targetElement = document.querySelector(targetId);
-            if (!targetElement) {
-              return;
-            }
-
-            event.preventDefault();
-            lenis.scrollTo(targetElement, { offset: -80 });
-          });
-        });
       }
 
+      initAnchorNavigation();
       initRevealAnimations();
       initCountAnimations();
       initInteractiveCards();
@@ -897,7 +1241,57 @@
     });
 
     window.addEventListener('scroll', updateNavChrome, { passive: true });
-    window.addEventListener('resize', updateNavChrome);
+    window.addEventListener('resize', handleResponsiveResize);
+
+    function getAnchorOffset() {
+      const nav = document.getElementById('navbar');
+      const navHeight = nav ? nav.getBoundingClientRect().height : 80;
+      return -(navHeight + 12);
+    }
+
+    function initAnchorNavigation() {
+      const anchors = Array.from(document.querySelectorAll('a[href^="#"]'));
+      anchors.forEach((anchor) => {
+        anchor.addEventListener('click', function onAnchorClick(event) {
+          const targetId = this.getAttribute('href');
+          if (!targetId || targetId === '#') {
+            return;
+          }
+
+          const targetElement = document.querySelector(targetId);
+          if (!targetElement) {
+            return;
+          }
+
+          event.preventDefault();
+          const offset = getAnchorOffset();
+
+          if (lenis) {
+            lenis.scrollTo(targetElement, { offset });
+            return;
+          }
+
+          const targetTop = targetElement.getBoundingClientRect().top + window.scrollY + offset;
+          window.scrollTo({
+            top: targetTop,
+            behavior: MOTION_PREFERS_REDUCED.matches ? 'auto' : 'smooth'
+          });
+        });
+      });
+    }
+
+    function handleResponsiveResize() {
+      updateNavChrome();
+
+      const menu = document.getElementById('mobile-menu');
+      if (menu && menu.classList.contains('is-open') && !MOBILE_VIEWPORT.matches) {
+        toggleMobileMenu(false);
+      }
+
+      if (!MOBILE_VIEWPORT.matches) {
+        initMapScrollExperience();
+      }
+    }
 
     function initRevealAnimations() {
       const revealNodes = Array.from(document.querySelectorAll('.reveal'));
@@ -984,7 +1378,7 @@
     }
 
     function initInteractiveCards() {
-      if (MOTION_PREFERS_REDUCED.matches || window.matchMedia('(hover: none)').matches) {
+      if (MOTION_PREFERS_REDUCED.matches || window.matchMedia('(hover: none), (max-width: 1023px)').matches) {
         return;
       }
 
@@ -1082,10 +1476,12 @@
       const menu = document.getElementById('mobile-menu');
       const isModalOpen = modalContainer && !modalContainer.classList.contains('hidden');
       const isMenuOpen = menu && menu.classList.contains('is-open');
-      document.body.style.overflow = isModalOpen || isMenuOpen ? 'hidden' : '';
+      const shouldLock = Boolean(isModalOpen || isMenuOpen);
+      document.body.style.overflow = shouldLock ? 'hidden' : '';
+      document.body.classList.toggle('is-overlay-open', shouldLock);
 
       if (lenis) {
-        if (isModalOpen || isMenuOpen) {
+        if (shouldLock) {
           lenis.stop();
         } else {
           lenis.start();
@@ -1096,6 +1492,7 @@
     // Mobile Menu Toggle
     function toggleMobileMenu(forceState) {
       const menu = document.getElementById('mobile-menu');
+      const menuButton = document.getElementById('mobile-menu-button');
       if (!menu) {
         return;
       }
@@ -1113,6 +1510,12 @@
         menuItems.forEach((item) => {
           item.style.transitionDelay = '0ms';
         });
+      }
+
+      menu.setAttribute('aria-hidden', shouldOpen ? 'false' : 'true');
+      if (menuButton) {
+        menuButton.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false');
+        menuButton.setAttribute('aria-label', shouldOpen ? 'Menü schließen' : 'Menü öffnen');
       }
 
       syncBodyLock();
@@ -1449,10 +1852,11 @@
       mapScrollState.fallback = document.getElementById('map-load-fallback');
       mapScrollState.reducedMotion = MOTION_PREFERS_REDUCED.matches;
 
-      if (!mapScrollState.section) {
+      if (!mapScrollState.section || mapScrollState.experienceInitialized || MOBILE_VIEWPORT.matches) {
         return;
       }
 
+      mapScrollState.experienceInitialized = true;
       setTargetMapProgress(getMapProgress());
       window.addEventListener('scroll', queueMapScrollUpdate, { passive: true });
       window.addEventListener('resize', queueMapScrollUpdate);
@@ -1482,6 +1886,10 @@
     }
 
     function init3DMap() {
+      if (MOBILE_VIEWPORT.matches) {
+        return;
+      }
+
       if (mapScrollState.map) {
         queueMapScrollUpdate();
         return;
